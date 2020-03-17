@@ -119,6 +119,21 @@ section {
     font-style: italic;
 }
 
+/* ============ Section Symptomes  ============== */
+
+#symptomes  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#symptomes p {
+    margin-top: 25%;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #707070;
+}
+
+
 /* =================== Footer =================== */
 
 footer {
