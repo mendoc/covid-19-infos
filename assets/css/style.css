@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+
+/* ============== Regles generales ============== */
+
+body {
+    margin: 0;
+    padding: 0;
+    color: #000;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =================== Topbar =================== */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    background-color: #fff;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, .2) 0 3px 6px;
+}
+
+header > a:first-of-type {
+    flex-basis: 45%;
+    padding-left: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #707070;
+}
+
+header div {
+    text-align: center;
+    padding: 5px 0;
+}
+
+header div span {
+    display: block;
+    font-size: .6rem;
+    color: rgba(0, 0, 0, .66)
+}
+
+header a:last-of-type {
+    text-align: center;
+    background-color: #169F20;
+    color: #fff;
+    font-size: .6rem;
+    padding: 5px 7px;
+}
+
+/* ============ Styles des sections ============ */
+
+section {
+    margin: 50px 0 65px 0;
+    display: none;
+    padding: 16px;
+}
+
+.publication .pub-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.publication .pub-footer p {
+    color: rgba(0, 0, 0, .45);
+    font-size: .65rem;
+    font-style: italic;
+}
+
+/* =================== Footer =================== */
+
+footer {
+    position: fixed;
+    bottom: -2px;
+    background-color: #fff;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, .2) 0 -3px 6px;
+}
+
+footer ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+}
+
+footer li {
+    display: inline-flex;
+    align-items: center;
+    flex-direction: column;
+    text-decoration: none;
+    list-style: none;
+    font-size: .6rem;
+    padding: 10px;
+}
+
+footer li img {
+    margin-bottom: 5px;
+}
+
+/* ============= Classes utilitaires ============= */
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.active {
+    color: #1565C0;
+    background-color: #E4EFFA;
+}
+
+/* ================= Composants ================== */
+
+.publication {
+    background-color: #fff;
+    border-radius: 7px;
+    box-shadow: 0 0 7px rgba(0, 0, 0, .16);
+    margin-bottom: 15px;
+}
+
+.publication .pub-date {
+    display: flex;
+    align-items: center;
+}
+
+.publication time {
+    color: rgba(0, 0, 0, .45);
+    font-size: .65rem;
+    margin-left: 5px;
+}
+.publication .image {
+    background-image: url("../img/ecole241.png");
+    height: 125px;
+    background-size: cover;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+.publication .content {
+    font-size: .7rem;
+    padding: 10px;
+}
+
+.publication .content p {
+    margin-top: 7px;
+}
+
+.button span {
+    margin-left: 5px;
+}
+.button {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    background-color: #1565C0;
+    color: #fff;
+    border-radius: 4px;
+    padding: 7px 7px;
+    font-size: .7rem;
+    font-family: 'Montserrat', sans-serif;
+}
