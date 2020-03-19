@@ -28,6 +28,9 @@ function GetInfoCovid19(RSS_URL) {
         accepts:{
             xml:"application/rss+xml"
         },
+        headers:{
+            'Access-Control-Allow-Origin': 'https://practical-liskov-571032.netlify.com/'
+        },
         dataType:"xml",
         success:function (data) {
             // On retient le nom de la source
