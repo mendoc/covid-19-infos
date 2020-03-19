@@ -44,6 +44,7 @@ Une fois que vous avez terminé de travailler et que votre resultat est satisfai
 - Formatez bien votre code (indentation, règles syntaxiques)
 - Renommez bien vos composants (classes, id, variables, fichiers, etc.)
 - Rassurez vous d’avoir respecté l’organisation des dossiers du projet (mettre les fichiers dans les dossiers adéquats)
+- Commentez correctement votre code pour qu'il soit compréhensible par les autres
 - Faites une dernière vérification pour confirmer que tout est ok.
 
 Créez un commit
