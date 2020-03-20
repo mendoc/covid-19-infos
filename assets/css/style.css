@@ -78,6 +78,7 @@ section {
     font-size: .8em;
     color: #ffffff;
     text-align: center;
+    margin-bottom: 0;
     padding: .5em .25em;
     background-color: #1565C0;
     border-top-left-radius: 7px;
@@ -130,6 +131,10 @@ section {
     color: rgba(0, 0, 0, .45);
     font-size: .65rem;
     font-style: italic;
+}
+
+.publication .pub-footer a{
+    color: #1565C0;
 }
 
 /* ============ Section Symptomes  ============== */
