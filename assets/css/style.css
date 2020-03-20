@@ -143,8 +143,11 @@ section p+button {
     margin: 0 auto;
 }
 
-section > p {
+section > p:first-of-type {
     margin-top: 25%;
+}
+
+section > p {
     text-align: center;
     font-size: 1.2rem;
     color: #707070;
@@ -202,22 +205,6 @@ footer li i {
     margin-bottom: 2px;
 }
 
-/* ============= Classes utilitaires ============= */
-
-.hide {
-    display: none;
-}
-
-.show {
-    display: block;
-}
-
-.active,
-.active i{
-    color: #1565C0;
-    background-color: #E4EFFA;
-}
-
 /* ================= Composants ================== */
 
 .button span {
@@ -237,4 +224,20 @@ footer li i {
     font-size: .7rem;
     font-family: 'Montserrat', sans-serif;
     box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
+/* ============= Classes utilitaires ============= */
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.active,
+.active i{
+    color: #1565C0;
+    background-color: #E4EFFA;
 }

@@ -10,21 +10,28 @@
     <link rel="stylesheet" href="assets/css/style.css">
 
     <meta name=author content="Ecole 241">
-    <meta name=description content="COVID-19 Infos est un système de notifications permettant de suivre l'évolution du coronavirus au Gabon.">
-    <meta name=keywords content="COVID-19, COVID-19 Infos, Coronavirus, Coronavirus Gabon, Ecole 241, OkaCode, Infos coronavirus, Alert coronavirus, en direct coronavirus, covid19, gabon actualité covid19, gabon recommandation mesures covid19">
+    <meta name=description
+          content="COVID-19 Infos est un système de notifications permettant de suivre l'évolution du coronavirus au Gabon.">
+    <meta name=keywords
+          content="COVID-19, COVID-19 Infos, Coronavirus, Coronavirus Gabon, Ecole 241, OkaCode, Infos coronavirus, Alert coronavirus, en direct coronavirus, covid19, gabon actualité covid19, gabon recommandation mesures covid19">
 
     <meta name=og:title content="COVID-19 Infos">
     <meta name=og:type content="website">
     <meta name=og:image content="https://covid-19-infos.netlify.com/assets/img/logo_temp.png"/>
     <meta name=og:url content="https://covid-19-infos.netlify.com"/>
     <meta name=og:site_name content="COVID-19 Infos">
-    <meta name=og:description content="COVID-19 Infos est un système de notifications permettant de suivre l'évolution du coronavirus au Gabon.">
+    <meta name=og:description
+          content="COVID-19 Infos est un système de notifications permettant de suivre l'évolution du coronavirus au Gabon.">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161415127-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
         gtag('js', new Date());
 
         gtag('config', 'UA-161415127-1');
@@ -34,7 +41,7 @@
 <main>
     <header>
         <a href="#home">COVID-19 Infos</a>
-        <div>
+        <div class="button-notif hide">
             <i class="fa fa-bell"></i>
             <span>Activer</span>
         </div>
@@ -45,18 +52,10 @@
         <p>
             <i class="fa fa-clock-o fa-2x"></i><br>
             Bientôt disponible <br><br>
-
-
-            Vous pourrez en savoir
-            plus sur les
-            symptômes du
-            coronavirus <br><br>
-
-            Activez les notifications
-            afin d'être notifié lorsque
-            la rubrique sera disponible
+            Vous pourrez en savoir plus sur les symptômes du coronavirus
         </p>
-        <button class="button"><i class="fa fa-bell"></i> <span>Activer les notifications</span></button>
+        <p class="text-notif hide">Activez les notifications afin d'être notifié lorsque la rubrique sera disponible</p>
+        <button class="button button-notif hide"><i class="fa fa-bell"></i> <span>Activer les notifications</span></button>
     </section>
     <section id="cartes">
         <p>
@@ -65,13 +64,10 @@
 
 
             Vous pourrez savoir où trouver des pharmacies,
-            des lieux de soins, etc...<br><br>
-
-            Activez les notifications
-            afin d'être notifié lorsque
-            la rubrique sera disponible
+            des lieux de soins, etc...
         </p>
-        <button class="button"><i class="fa fa-bell"></i> <span>Activer les notifications</span></button>
+        <p class="text-notif hide">Activez les notifications afin d'être notifié lorsque la rubrique sera disponible</p>
+        <button class="button button-notif hide"><i class="fa fa-bell"></i> <span>Activer les notifications</span></button>
     </section>
     <section id="contacts">
         <p>
@@ -80,20 +76,15 @@
 
 
             Dans cette rubrique il y aura des numéros utiles en cas
-            d'urgence<br><br>
-
-            Activez les notifications
-            afin d'être notifié lorsque
-            la rubrique sera disponible
+            d'urgence
         </p>
-        <button class="button"><i class="fa fa-bell"></i> <span>Activer les notifications</span></button>
+        <p class="text-notif hide">Activez les notifications afin d'être notifié lorsque la rubrique sera disponible</p>
+        <button class="button button-notif hide"><i class="fa fa-bell"></i> <span>Activer les notifications</span></button>
     </section>
     <section id="ailleurs"></section>
     <section class="show" id="loading">
         <p>
-
             <img src="assets/img/loading.gif" alt="Chargement"><br><br>
-
             Un instant, nous chargeons le contenu.
         </p>
     </section>
@@ -103,7 +94,7 @@
             <li data-target="#symptomes"><i class="fa fa-frown-o fa-3x"></i><span>Symptômes</span></li>
             <li data-target="#cartes"><i class="fa fa-map fa-3x"></i><span>Cartes</span></li>
             <li data-target="#contacts"><i class="fa fa-phone fa-3x"></i><span>Contacts</span></li>
-        <li data-target="#ailleurs"><i class="fa fa-globe fa-3x"></i><span>Ailleurs</span></li>
+            <li data-target="#ailleurs"><i class="fa fa-globe fa-3x"></i><span>Ailleurs</span></li>
         </ul>
     </footer>
 </main>
