@@ -4,11 +4,11 @@ function cons(stuff) {
     console.log(stuff)
 }
 
-function listen(path, callback) {
+function listen(path, callback, err) {
     db.collection(path)
         .onSnapshot(function (collection) {
             callback(collection);
-        });
+        })
 }
 
 function once(path, callback) {
@@ -27,10 +27,6 @@ function write(path, value, success, error) {
         });
 }
 
-function push(path, value) {
-    firebase.database().ref(path).push(value);
-}
-
 function getKey() {
     return firebase.database().ref().push().key;
 }
@@ -39,18 +35,27 @@ function getNotificationPermissionAsked() {
     return (window.Notification && Notification.permission !== "granted" && Notification.permission !== "denied");
 }
 
-function afficherSection(selector) {
-    $("section").removeClass("show");
-    $("#" + selector).addClass("show");
+function showBody(selector) {
+    $(`#${selector} .body`).css("display", "block");
 }
 
 function cacher(selector) {
-    $(selector).css("display", "none");
+    $(selector).addClass("hide");
 }
 
-function loading(show = true) {
-    if (show) $("#loading").css("display", "block");
-    else $("#loading").css("display", "none");
+function afficher(selector) {
+    $(selector).removeClass("hide");
+}
+
+function loader(rubrique, show = true) {
+    let l = `#${rubrique} .loading `;
+    if (show) {
+        afficher(l + 'img');
+        afficher(l + 'p');
+    } else {
+        cacher(l + 'img');
+        cacher(l + 'p');
+    }
 }
 
 /**
@@ -59,10 +64,9 @@ function loading(show = true) {
  * @param {string} section
  * @return void
  */
-function addPub(data, section = 'home') {
+function addPub(data, section = 'home', asc = true) {
     let d = moment(data.datePub).format("dddd, Do MMMM YYYY [à] HH:mm");
-    $(`#${section}`).prepend(
-        `<div class="publication">
+    let item = `<div class="publication">
             <h1 class="title">${data.titre}</h1>
             <div class="image">
                 <img src="${data.image}" alt="Image de ${data.titre}">
@@ -78,8 +82,9 @@ function addPub(data, section = 'home') {
                     <p>Source : <a href="${data.sourceLien}">${data.sourceNom}</a></p>
                 </div>
             </div>
-        </div>`
-    );
+        </div>`;
+    if (asc) $(`#${section} .body`).prepend(item);
+    else $(`#${section} .body`).append(item);
 }
 
 
@@ -121,9 +126,11 @@ function getCovidRSS(RSS_URL) {
                             sourceNom: source,
                             sourceLien: el.find("link").text()
                         };
-                        addPub(params, "ailleurs");
+                        addPub(params, "ailleurs", false);
                     }
-                })
+                });
+            loader("ailleurs", false);
+            showBody("ailleurs");
         }
     })
 }

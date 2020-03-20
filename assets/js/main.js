@@ -30,13 +30,18 @@ $(document).ready(function () {
 
     // Récuperation des publications
     listen("publications", pubs => {
-        loading(true);
-        $("#home").empty();
+        loader("home");
+
+        $("#home .body").empty();
         pubs.forEach((doc) => {
-            addPub(doc.data());
+            addPub(doc.data(), "home", false);
         });
-        afficherSection("home");
-        loading(false);
+
+        showBody("home");
+        loader("home", false);
+    }, e => {
+        cons(e);
+        alert("Erreur!")
     });
 
     // Récuperation des flux rss

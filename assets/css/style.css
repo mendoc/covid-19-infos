@@ -67,6 +67,38 @@ section {
     padding: 16px;
 }
 
+section div.body {
+    display: none;
+}
+
+section .loading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+}
+
+section .loading > img {
+    width: 40%;
+}
+
+section p+button {
+    margin: 0 auto;
+}
+
+section > p:first-of-type {
+    margin-top: 25%;
+}
+
+section > p {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #707070;
+}
+
+/* ============ Composant publication ============ */
+
 .publication {
     background-color: #fff;
     border-radius: 7px;
@@ -135,42 +167,6 @@ section {
 
 .publication .pub-footer a{
     color: #1565C0;
-}
-
-/* ============ Section Symptomes  ============== */
-
-section p+button {
-    margin: 0 auto;
-}
-
-section > p:first-of-type {
-    margin-top: 25%;
-}
-
-section > p {
-    text-align: center;
-    font-size: 1.2rem;
-    color: #707070;
-}
-
-/* ============ Section Loading  ============== */
-
-#loading {
-    height: 100vh;
-    margin: 0;
-}
-
-#loading img {
-    width: 40%;
-}
-
-#loading p {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin-top: 0;
 }
 
 /* =================== Footer =================== */
