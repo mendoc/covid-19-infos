@@ -28,8 +28,18 @@ function getKey() {
     return firebase.database().ref().push().key;
 }
 
+function afficherSection(selector) {
+    $("section").removeClass("show");
+    $("#" + selector).addClass("show");
+}
+
 function cacher(selector) {
     $(selector).css("display", "none");
+}
+
+function loading(show = true) {
+    if (show) $("#loading").css("display", "block");
+    else $("#loading").css("display", "none");
 }
 
 function afficherFenetre(name) {

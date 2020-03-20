@@ -12,9 +12,12 @@ $(document).ready(function () {
     });
 
     listen("publications", function (pubs) {
+        loading(true);
         pubs.forEach((doc) => {
             addPub(doc.data());
         });
+        afficherSection("home");
+        loading(false);
     });
 
 
@@ -40,7 +43,6 @@ $(document).ready(function () {
         </div>`
         );
     }
-
 
     // Recuperation des flux rss
     const RSS_URL = `https://www.mediapart.fr/articles/feed`;

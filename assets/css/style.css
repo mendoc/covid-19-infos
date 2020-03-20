@@ -150,6 +150,25 @@ section > p {
     color: #707070;
 }
 
+/* ============ Section Loading  ============== */
+
+#loading {
+    height: 100vh;
+    margin: 0;
+}
+
+#loading img {
+    width: 40%;
+}
+
+#loading p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: 0;
+}
 
 /* =================== Footer =================== */
 
