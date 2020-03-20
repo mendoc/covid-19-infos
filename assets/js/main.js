@@ -34,14 +34,15 @@ $(document).ready(function () {
 
         $("#home .body").empty();
         pubs.forEach((doc) => {
-            addPub(doc.data(), "home", false);
+            addPub(doc.data(), "home");
         });
-
+        // Gestion du clic sur le bouton de partage
+        let btns = $('#home .content button');
+        btns.each(function () {
+            addClickEvent($(this));
+        });
         showBody("home");
         loader("home", false);
-    }, e => {
-        cons(e);
-        alert("Erreur!")
     });
 
     // Récuperation des flux rss

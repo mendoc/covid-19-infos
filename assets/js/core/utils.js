@@ -4,7 +4,7 @@ function cons(stuff) {
     console.log(stuff)
 }
 
-function listen(path, callback, err) {
+function listen(path, callback) {
     db.collection(path)
         .onSnapshot(function (collection) {
             callback(collection);
@@ -64,7 +64,7 @@ function loader(rubrique, show = true) {
  * @param {string} section
  * @return void
  */
-function addPub(data, section = 'home', asc = true) {
+function addPub(data, section = 'home') {
     let d = moment(data.datePub).format("dddd, Do MMMM YYYY [à] HH:mm");
     let item = `<div class="publication">
             <h1 class="title">${data.titre}</h1>
@@ -81,10 +81,14 @@ function addPub(data, section = 'home', asc = true) {
                     <button class="button"><i class="fa fa-share-alt"></i><span>Partager</span></button>
                     <p>Source : <a href="${data.sourceLien}">${data.sourceNom}</a></p>
                 </div>
+                <div class="pub-sharing hide">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=${data.sourceLien}"><i class="fa fa-2x fa-facebook"></i></a>
+                    <a href="https://wa.me/?text=${data.sourceLien}"><i class="fa fa-2x fa-whatsapp"></i></a>
+                    <a onclick="copyToClipboard('${data.sourceLien}')"><i class="fa fa-2x fa-copy"></i></a>
+                </div>
             </div>
         </div>`;
-    if (asc) $(`#${section} .body`).prepend(item);
-    else $(`#${section} .body`).append(item);
+    $(`#${section} .body`).append(item);
 }
 
 
@@ -126,11 +130,44 @@ function getCovidRSS(RSS_URL) {
                             sourceNom: source,
                             sourceLien: el.find("link").text()
                         };
-                        addPub(params, "ailleurs", false);
+                        addPub(params, "ailleurs");
                     }
                 });
+            // Gestion du clic sur le bouton de partage
+            let btns = $('#ailleurs .content button');
+            btns.each(function () {
+                addClickEvent($(this));
+            });
             loader("ailleurs", false);
             showBody("ailleurs");
         }
     })
 }
+
+function addClickEvent(el) {
+    $(el).click(function () {
+        el.toggleClass('button button-cancel');
+        let pubSharing = el.parent().parent().find('.pub-sharing');
+        if (pubSharing.hasClass('hide')) {
+            el.find('i').prop('class', 'fa fa-remove');
+            el.find('span').text('Annuler');
+        }
+        else {
+            el.find('i').prop('class', 'fa fa-share-alt');
+            el.find('span').text('Partager');
+        }
+        pubSharing.toggleClass('hide', '');
+    });
+}
+
+const copyToClipboard = str => {
+    const el = document.createElement('textarea');
+    el.value = str;
+    el.setAttribute('readonly', '');
+    el.style.position = 'absolute';
+    el.style.left = '-9999px';
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+};
