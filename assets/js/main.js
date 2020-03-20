@@ -25,11 +25,13 @@ $(document).ready(function () {
         let section = $($(this).data("target"));
         $("section").removeClass("show");
         section.addClass("show");
+
     });
 
     // Récuperation des publications
     listen("publications", pubs => {
         loading(true);
+        $("#home").empty();
         pubs.forEach((doc) => {
             addPub(doc.data());
         });

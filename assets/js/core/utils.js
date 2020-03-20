@@ -5,19 +5,26 @@ function cons(stuff) {
 }
 
 function listen(path, callback) {
+    db.collection(path)
+        .onSnapshot(function (collection) {
+            callback(collection);
+        });
+}
+
+function once(path, callback) {
     db.collection(path).get().then((querySnapshot) => {
         callback(querySnapshot)
     });
 }
 
-function once(path, callback) {
-    firebase.database().ref(path).once('value', function (snapshot) {
-        callback(snapshot.val());
-    });
-}
-
-function write(path, value) {
-    firebase.database().ref(path).set(value);
+function write(path, value, success, error) {
+    db.collection(path).add(value)
+        .then(function (docRef) {
+            success(docRef);
+        })
+        .catch(function (e) {
+            error(e);
+        });
 }
 
 function push(path, value) {
