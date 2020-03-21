@@ -204,6 +204,10 @@ section > p {
     padding: 5px;
 }
 
+.remark a{
+    color: #1565C0;
+}
+
 .box{
     background-color: #fff;
     border-radius: 7px;
@@ -253,7 +257,13 @@ footer li {
     list-style: none;
     font-size: .6rem;
     padding: 10px;
+    transition: transform .3s;
 }
+
+footer li:active{
+    transform: scale(0.6);
+}
+
 footer li i {
     color: #707070;
     margin-bottom: 2px;
