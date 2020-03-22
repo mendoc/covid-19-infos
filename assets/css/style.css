@@ -55,7 +55,7 @@ header a:last-of-type {
     text-align: center;
     background-color: #169F20;
     color: #fff;
-    font-size: .6rem;
+    font-size: .7rem;
     padding: 5px 7px;
 }
 
@@ -83,7 +83,7 @@ section .loading > img {
     width: 40%;
 }
 
-section p+button {
+section p + button {
     margin: 0 auto;
 }
 
@@ -97,6 +97,44 @@ section > p {
     color: #707070;
 }
 
+/* =================== Section Symptomes =============== */
+
+.remark {
+    margin-top: 3px;
+    padding: 5px;
+}
+
+.remark p:last-of-type{
+    font-size: .9em;
+}
+
+.remark a {
+    color: #1565C0;
+}
+
+.box {
+    background-color: #fff;
+    border-radius: 7px;
+    box-shadow: 0 0 7px rgba(0, 0, 0, .16);
+    margin-bottom: 15px;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+.box-img {
+    height: 125px;
+}
+
+.box-img > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.box-content {
+    text-align: center;
+}
+
 /* ============ Composant publication ============ */
 
 .publication {
@@ -106,7 +144,7 @@ section > p {
     margin-bottom: 15px;
 }
 
-.publication .title{
+.publication .title {
     font-size: .8em;
     color: #ffffff;
     text-align: center;
@@ -121,7 +159,7 @@ section > p {
     height: 125px;
 }
 
-.publication .image > img{
+.publication .image > img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -288,7 +326,11 @@ footer li i {
 }
 
 .active,
-.active i{
+.active i {
     color: #1565C0;
     background-color: #E4EFFA;
+}
+
+.text-center {
+    text-align: center;
 }
