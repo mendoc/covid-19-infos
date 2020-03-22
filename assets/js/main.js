@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    moment.locale('fr_FR');
 
     // On vérifie si on a déjà demandé la permission a l'utilisateur
     let neverAsked = getNotificationPermissionAsked();
