@@ -225,7 +225,12 @@ footer li {
     transition: transform .3s;
 }
 
-footer ul li:active i, footer ul li:active span{
+.button:active, .button-cancel:active {
+    transition: transform .3s;
+    transform: scale(.9);
+}
+
+footer ul li:active i, footer ul li:active span {
     transition: transform .3s;
     transform: scale(.6);
 }
