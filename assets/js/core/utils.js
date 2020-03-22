@@ -5,7 +5,7 @@ function cons(stuff) {
 }
 
 function listen(path, callback) {
-    db.collection(path)
+    db.collection(path).orderBy('pubDate', 'desc')
         .onSnapshot(function (collection) {
             callback(collection);
         })
@@ -65,7 +65,7 @@ function loader(rubrique, show = true) {
  * @return void
  */
 function addPub(data, section = 'home') {
-    let d = moment(data.datePub).format("dddd, Do MMMM YYYY [à] HH:mm");
+    let d = moment(data.pubDate).format("dddd, Do MMMM YYYY [à] HH:mm");
     let item = `<div class="publication">
             <h1 class="title">${data.titre}</h1>
             <div class="image">
@@ -125,7 +125,7 @@ function getCovidRSS(RSS_URL) {
                         const params = {
                             titre: title,
                             image: imageUrl,
-                            datePub: date,
+                            pubDate: date,
                             description: description,
                             sourceNom: source,
                             sourceLien: el.find("link").text()

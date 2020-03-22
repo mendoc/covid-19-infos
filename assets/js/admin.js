@@ -7,6 +7,9 @@ $(document).ready(function () {
 
     $('form').submit(function (e) {
         e.preventDefault();
+        cacher('input[type="submit"]');
+        let message = $('p.message');
+        message.addClass('hide');
         let publication = {};
         let fields = $('input[type="hidden"], input[type="url"], input[type="text"], input:checked, textarea[name]');
         fields.each(function () {
@@ -40,8 +43,22 @@ $(document).ready(function () {
 
         write('publications', publication, function (p) {
             cons(p);
+            let message = $('p.message');
+            message.text('La publication a été créée');
+            message.removeClass('error');
+            message.addClass('success');
+            message.removeClass('hide');
+            $('form')[0].reset();
+            afficher('input[type="submit"]');
         }, function (e) {
-            cons(e)
+            cons(e);
+            let message = $('p.message');
+            message.text('Une erreur s\'est produite lors de l\'enregistrement de la publication.');
+            message.removeClass('success');
+            message.addClass('error');
+            message.removeClass('hide');
+            afficher('input[type="submit"]');
         })
     })
+
 });

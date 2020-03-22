@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>COVID-19 Infos | Nouvelle publication</title>
+    <meta name=viewport content="width=device-width,initial-scale=1,user-scalable=no">
     <style>
         label {
             display: block;
@@ -15,10 +16,26 @@
         .hide {
             display: none;
         }
+        .message {
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1.2em;
+        }
+        p.success {
+            background-color: rgba(73, 201, 88, 0.35);
+            color: #0b4210;
+        }
+
+        p.error {
+            background-color: rgba(201, 76, 71, 0.17);
+            color: #ce0e43;
+        }
     </style>
 </head>
 <body>
-<h1>Nouvelle publication</h1>
+<h1>COVID-19 Infos</h1>
+<h2>Nouvelle publication</h2>
+<p class="message success hide"></p>
 <form>
     <input type="hidden" name="statut" value="BROUILLON">
 
