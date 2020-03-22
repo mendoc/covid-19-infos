@@ -280,3 +280,22 @@ footer li i {
     color: #1565C0;
     background-color: #E4EFFA;
 }
+/* =================== animation des bouton ========== */
+footer > ul > li{
+    transition: all 1s 0.5s ease-in-out;
+}
+footer > ul > li span{
+    box-shadow: 0 15px 15px rgba(7, 7, 7, 0.514);
+}
+footer > ul > li i,span{
+    display: inline-block;
+    cursor: pointer;
+}
+footer ul li:active span{
+    transform: translate(0, 4px);
+    box-shadow: 0 px 10px rgba(7, 7, 7, 0.514);
+}
+footer ul li:active i{
+    transform: translate(0, 4px);
+    box-shadow: 0 0 5px rgba(7, 7, 7, 0.514);
+}
