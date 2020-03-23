@@ -20,6 +20,8 @@
     <meta name=og:description
           content="COVID-19 Infos est un système de notifications permettant de suivre l'évolution du coronavirus au Gabon.">
 
+    <link rel="stylesheet" href="assets/css/admin.css">
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161415127-1"></script>
     <script>
@@ -33,184 +35,37 @@
 
         gtag('config', 'UA-161415127-1');
     </script>
-    <style>
-    @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
-        body{
-            width: 100vw;
-            display: grid;
-            grid-template-areas: ". . . ." 
-                                ". a a ."
-                                ". a a ."
-                                ". a a ."
-                                ". . . .";                   
-            grid-template-columns: 1fr 3fr 3fr 1fr;
-            grid-template-rows: 0.5fr 4fr 4fr 4fr 0.5fr;
-        }
-        main{
-            
-            grid-area: a;
-            background-color: #f5f7f9;
-            border-radius: 2%;
-            box-shadow: 2px 5px 5px 2px rgb(133, 132, 132);
-            display: grid;
-            grid-template-areas: 
-                                "header header header header" 
-                                "div div div div"
-                                "form form form form"
-                                "form form form form"
-                                ". foot foot .";                   
-            grid-template-columns: 0.2fr 3fr 3fr 0.5fr;
-            grid-template-rows: 0.8fr 0.6fr 4fr 4fr 1fr;
-        }
-        header{
-
-            grid-area: header;
-            background-color:  #1565c0;
-            border-radius: 15px 15px 0 0;
-        }
-        h1{
-            text-align: center;
-            font-family: 'Montserrat', 'sans-serif';
-            font-size: 2.5rem;
-            color: #fff;
-        }
-
-        header>div{
-            width: 100%;
-            grid-area: div;
-        }
-        
-        h2{
-            color: #707070;
-            font-family: 'Montserrat', 'sans-serif';
-            font-weight: normal;
-            font-size: 1.7rem;
-            width: 40vw;
-            padding-left: 4%;
-        }
-
-        form{
-            grid-area: form;
-            padding: 0 5%;
-            display: grid;
-
-        }
-        legend{
-
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.6rem;
-            color: #1565c0;
-            margin-bottom: 2%;
-        }
-        input[type="text"],input[type="url"]{
-            width: 50%;
-            height: 4vh;
-        }
-        fieldset{
-            border: none;
-        }
-        .bloc{
-            border-left: solid 10px #1565c0;
-            background-color: #fff;
-            margin-bottom: 3%;
-            padding-left: 5%;
-            border-radius: 10px;
-            box-shadow: 5px 5px 6px 2px rgb(133, 132, 132);
-            padding: 2%;
-
-        }
-
-        label{
-            margin-bottom: 1vh;
-            font-family: 'Montserrat', sans-serif;
-            display: block;
-        }
-        input{
-            margin-bottom: 1vh;
-            padding-left: 1%;
-        }
-        .envoyer{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        input[type="submit"]{
-            padding: 8px 20px;
-            font-size: 1em;
-            font-family: 'Montserrat';
-            background-color: #707070;
-            color: #fff;
-            border: none;
-            border-bottom: 10px solid #1565c0;
-            border-radius: 6px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #fff;
-            color: #a5a5a5;
-            transition-duration: 0.8s;
-        }
-        textarea{
-            width: 80%;
-            padding: 1% 0 0 1%;
-
-        }
-
-        fieldset label {
-            display: inline;
-        }
-
-        .hide {
-            display: none;
-        }
-        .message {
-            padding: 10px;
-            border-radius: 5px;
-            font-size: 1.2em;
-        }
-        p.success {
-            background-color: rgba(73, 201, 88, 0.35);
-            color: #0b4210;
-        }
-
-        p.error {
-            background-color: rgba(201, 76, 71, 0.17);
-            color: #ce0e43;
-        }
-    </style>
 </head>
 <body>
     <main>
         <header>
             <h1>COVID-19 Infos</h1>
+            <h2>Nouvelle publication</h2>
         </header>
         <div>
-            <h2>Nouvelle publication</h2>
-            <p class="message success hide"></p>
+            <p class="message error">Une erreur s'est produite lors de la Publication enregistree avec succes</p>
         </div>
         <form>
+            <input type="hidden" name="statut" value="BROUILLON">
             <div class="bloc">
-
-                <input type="hidden" name="statut" value="BROUILLON">
-
                 <label for="pubAuteur">Auteur</label>
                 <input type="text" name="auteur" id="pubAuteur">
-
+            </div>
+            <div class="bloc">
                 <label for="pubTitre">Titre *</label>
                 <input type="text" name="titre" id="pubTitre" required>
-
+            </div>
+            <div class="bloc">
                 <label for="pubImage">Image *</label>
                 <input type="url" name="image" id="pubImage" required>
-
+            </div>
+            <div class="bloc">
                 <label for="pubDescription">Description *</label>
                 <textarea name="description" id="pubDescription" cols="30" rows="10" required></textarea>
-
             </div>
             <div class="bloc">
                 <fieldset>
-                    <legend>Type de pubication</legend>
+                    <legend>Type de publication</legend>
                     <label for="pubTypeTexte"><input type="radio" checked name="type" id="pubTypeTexte" value="TEXTE" data-target="#contentTypeTexte" required>
                         Texte</label>
                     <label for="pubTypeImage"><input type="radio" name="type" id="pubTypeImage" value="IMAGE" data-target="#contentTypeImage" required>
@@ -221,7 +76,8 @@
                     <label for="pubTypeLocalisation"><input type="radio" name="type" id="pubTypeLocalisation" value="LOCALISATION"
                                                             required data-target="#contentTypeLocalisation"> Localisation</label>
                 </fieldset>
-
+            </div>
+            <div class="bloc">
                 <div class="pubContent" id="contentTypeTexte">
                     <label for="pubContentTexte">Contenu</label>
                     <textarea id="pubContentTexte" cols="30" rows="10"></textarea>
@@ -246,7 +102,7 @@
                     <fieldset>
                         <legend>Coordonnées GPS</legend>
                         <label for="pubLatitude">Latitude</label>
-                        <input type="text" id="pubLatitude"><br>
+                        <input type="text" id="pubLatitude">
                         <label for="pubLongitude">Longitude</label>
                         <input type="text" id="pubLongitude">
                     </fieldset>
@@ -257,7 +113,7 @@
                 <fieldset>
                     <legend>Source</legend>
                     <label for="pubSourceNom">Nom de la source *</label>
-                    <input type="text" name="sourceNom" id="pubSourceNom" placeholder="Ex: Gabon Media Time" required><br>
+                    <input type="text" name="sourceNom" id="pubSourceNom" placeholder="Ex: Gabon Media Time" required>
                     <label for="pubSourceURL">URL de la source *</label>
                     <input type="url" name="sourceLien" id="pubSourceURL" required>
                 </fieldset>
@@ -280,13 +136,13 @@
             </div>
         </form>
 
-<script src="../assets/js/lib/jquery.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
-<script src="../assets/js/core/utils.js"></script>
-<script src="../assets/js/core/config.js"></script>
-<script src="../assets/js/admin.js"></script>
-
     </main>
+
+    <script src="../assets/js/lib/jquery.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
+    <script src="../assets/js/core/utils.js"></script>
+    <script src="../assets/js/core/config.js"></script>
+    <script src="../assets/js/admin.js"></script>
 </body>
 </html>
