@@ -104,7 +104,7 @@ section > p {
     padding: 5px;
 }
 
-.remark p:last-of-type{
+.remark p:last-of-type {
     font-size: .9em;
 }
 
@@ -133,6 +133,50 @@ section > p {
 
 .box-content {
     text-align: center;
+}
+
+/* ============ Section des cartes ============ */
+
+#cartes .cartes {
+    flex-direction: column;
+    justify-content: center;
+}
+
+#cartes .hopitaux {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#cartes .hopitaux  > div p.bold {
+    text-align: start;
+}
+
+.pharm, .hia, .chl, .cha, .zone {
+    width: 100%;
+}
+
+#cartes .titre {
+    text-align: center;
+    text-decoration: underline;
+    font-weight: bold;
+    color: #1565C0;
+    margin-top: 30px;
+}
+
+#cartes p {
+    text-align: justify;
+    line-height: 25px;
+}
+
+#cartes li a {
+    color: #1565C0;
+    line-height: 25px;
+}
+
+#cartes .numero-vert {
+    font-weight: bold;
+    color: #169F20;
 }
 
 /* ============ Composant publication ============ */
@@ -334,24 +378,7 @@ footer li i {
 .text-center {
     text-align: center;
 }
-.cartes{
-    flex-direction: column;
-    justify-content: center;
-}
-.hopitaux{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-.pharm, .hia, .chl, .cha, .zone{
-    width: 95vw;
-}
-.titre{
-    text-align: center;
-    text-decoration: underline;
+
+.bold {
     font-weight: bold;
-    color: #1565C0;
-}
-#cartes p{
-    color: #1565C0;
 }
