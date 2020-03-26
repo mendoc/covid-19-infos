@@ -213,6 +213,7 @@ section > p {
 #cartes p {
     text-align: justify;
     line-height: 25px;
+    padding: 1%;
 }
 
 #cartes li a {
@@ -434,4 +435,31 @@ footer li i {
 }
 .bold {
     font-weight: bold;
+}
+                                        /* style css du mode nuit  */
+.darkbg{
+ background-color:  rgb(4, 4, 12) ;
+}
+.darkbg_header{
+    background-color:  rgba(21, 21, 29, 0.932);
+}
+.darkbg_div{
+    background-color: #040404;
+}
+
+.darkshadow{
+    box-shadow: rgba(255, 254, 254, 0.2) 0 3px 6px;
+
+}
+.darkbg_img{
+    background-color: #545454;
+}
+.darkcolor{
+    color: #F4F4F4;
+}
+.dark_compteur{
+    background-color: #272727;
+}
+.darkbg_foot{
+    background-color: rgb(13, 13, 19);
 }
