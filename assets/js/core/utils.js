@@ -4,8 +4,15 @@ function cons(stuff) {
     console.log(stuff)
 }
 
-function listen(path, callback) {
+function listenPubs(path, callback) {
     db.collection(path).orderBy('pubDate', 'desc')
+        .onSnapshot(function (collection) {
+            callback(collection);
+        })
+}
+
+function listen(path, callback) {
+    db.collection(path)
         .onSnapshot(function (collection) {
             callback(collection);
         })

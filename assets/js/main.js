@@ -26,11 +26,21 @@ $(document).ready(function () {
         let section = $($(this).data("target"));
         $("section").removeClass("show");
         section.addClass("show");
+    });
 
+    // Récuperation des statistiques
+    listen("statistiques", (stats) => {
+        stats.forEach((stat) => {
+            let data = stat.data();
+            $('#contaminations').text(data.contaminations);
+            $('#deces').text(data.deces);
+            let d = moment(data.updateTime).format("dddd, Do MMMM YYYY");
+            $('#updateTime').text(`Mis à jour le ${d}`);
+        });
     });
 
     // Récuperation des publications
-    listen("publications", pubs => {
+    listenPubs("publications", (pubs) => {
         loader("home");
 
         $("#home .body").empty();
