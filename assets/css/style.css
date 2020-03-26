@@ -179,6 +179,59 @@ section > p {
     color: #169F20;
 }
 
+/* ================ Section Contact ============== */
+
+#contacts{
+    font-family: 'Montserrat',cursive;
+}
+
+#contacts legend{
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 600;
+    /* text-decoration: #4267b2 underline ; */
+}
+
+.input-field{
+    border: 1px solid #707070;
+    border-radius: 2px;
+    margin: 1em 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.input-field input{
+    border: none;
+    outline: none;
+    padding: .5em 1em;
+    box-sizing: border-box;
+    font-family: 'Montserrat',Arial, Helvetica, sans-serif;
+}
+
+.input-field i{
+    color: #707070;
+}
+
+.comment-field{
+    width: 98%;
+}
+
+.comment-field textarea{
+    width: 100%;
+    margin: auto;
+    font-family: 'Montserrat',cursive;
+    border-color: #707070;
+}
+
+.comment-field textarea:focus{
+    border-color: #4267b2;
+    outline: none;
+    padding: .4em;
+}
+
+
+
 /* ============ Composant publication ============ */
 
 .publication {

@@ -200,20 +200,29 @@
             </section>
             
             <section id="contacts">
-                <p>
-                    <i class="fa fa-clock-o fa-2x"></i><br>
-                    Bientôt disponible <br><br>
+                <div class="contact">
+                    <form method="post">
+                        <legend>Nous contactez ?</legend>
+                        <div class="input-field">
+                            <input type="email" placeholder="Entrer votre email" />
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" placeholder="Sujet" />
+                            <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                        </div>
+                        <div class="comment-field">
+                            <textarea placeholder="Entrer un commentaire ou une suggestion"  rows="10"></textarea>
+                        </div>
         
-        
-                    Dans cette rubrique il y aura des numéros utiles en cas
-                    d'urgence
-                </p>
-                <p class="text-notif hide">Activez les notifications afin d'être notifié lorsque la rubrique sera disponible</p>
-                <button class="button button-notif hide"><i class="fa fa-bell"></i> <span>Activer les notifications</span>
-                </button>
+                        <button type="submit" class="button">
+                            Envoyez &nbsp; <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                        </button>
+                    </form>
+                </div>
             </section>
         </div>
-    
+        
         <aside>
             <section id="ailleurs">
                 <h1 class="hide-on-mobile-and-tablet heading-2 more-info">Plus d'info</h1>
