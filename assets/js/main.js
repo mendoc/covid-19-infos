@@ -47,6 +47,15 @@ $(document).ready(function () {
         pubs.forEach((doc) => {
             addPub(doc.data(), "home");
         });
+
+        // Gestion du clic sur les publication
+        let elPubs = $('#home .title, #home .image, #home .content > p');
+        elPubs.each(function () {
+            $(this).click(function () {
+                location.href = $(this).data('url');
+            });
+        });
+
         // Gestion du clic sur le bouton de partage
         let btns = $('#home .content button');
         btns.each(function () {

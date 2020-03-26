@@ -74,8 +74,8 @@ function loader(rubrique, show = true) {
 function addPub(data, section = 'home') {
     let d = moment(data.pubDate).format("dddd, Do MMMM YYYY [à] HH:mm");
     let item = `<div class="publication">
-            <h1 class="title">${data.titre}</h1>
-            <div class="image">
+            <h1 class="title" data-url="${data.sourceLien}">${data.titre}</h1>
+            <div class="image" data-url="${data.sourceLien}">
                 <img src="${data.image}" alt="Image de ${data.titre}">
             </div>
             <div class="content">
@@ -83,7 +83,7 @@ function addPub(data, section = 'home') {
                     <i class="fa fa-clock-o"></i>
                     <time datetime="2020-03-16"> publié le ${d}</time>
                 </div>
-                <p>${data.description || "Contenu"}</p>
+                <p data-url="${data.sourceLien}">${data.description || "Contenu"}</p>
                 <div class="pub-footer">
                     <button class="button"><i class="fa fa-share-alt"></i><span>Partager</span></button>
                     <p>Source : <a href="${data.sourceLien}">${data.sourceNom}</a></p>
