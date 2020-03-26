@@ -41,161 +41,195 @@
 <body>
 <main>
     <header>
-        <a href="#home">COVID-19 Infos</a>
-        <div class="button-notif hide">
-            <i class="fa fa-bell"></i>
-            <span>Activer</span>
+        <div class="nav-mobile hide-on-desktop">
+            <a href="#home">COVID-19 Infos</a>
+            <div class="button-notif hide">
+                <i class="fa fa-bell"></i>
+                <span>Activer</span>
+            </div>
+            <a href="tel:1410">Appeler <br>gratuitement le <br>1410</a>
         </div>
-        <a href="tel:1410">Appeler <br>gratuitement le <br>1410</a>
+        <nav class="nav-desktop hide-on-mobile-and-tablet">
+            <div class="nav-logo">
+                <!-- <img src="assets/img/logo_temp.png" alt="COVID-19 logo png"> -->
+                <a href="#">COVID-19 Infos</a>
+            </div>
+            <ul class="nav-wrapper">
+                <li class="nav-link"><a href="#">Accueil</a></li>
+                <li class="nav-link"><a href="#symptomes">Symptômes</a></li>
+                <li class="nav-link"><a href="#cartes">Cartes</a></li>
+                <li class="nav-link"><a href="#contacts">Contact</a></li>
+                <li>
+                    <div class="button-notif hide">
+                        <i class="fa fa-bell"></i>
+                    </div>
+                </li>
+            </ul>
+        </nav>
     </header>
 
-    <section class="show" id="home">
+    <div class="container">
 
-        <div class="loading">
-            <img src="assets/img/loading.gif" alt="image de chargement">
-            <p>Un instant, nous chargeons le contenu.</p>
-        </div>
+        <div>
+            <section class="show" id="home">
+                <h1 class="hide-on-mobile-and-tablet heading-1">Infos Locales</h1>
 
-        <div class="body"></div>
-
-    </section>
-
-    <section id="symptomes">
-        <div class="remark text-center">
-            <p>Les symptômes les plus courants de la COVID-19 sont cités ci-dessous. Notons aussi que ces symptômes sont
-                généralement <a href="https://www.linternaute.fr/dictionnaire/fr/definition/benin/">bénins</a> et
-                apparaissent de manière progressive.</p>
-            <p>
-                <a href="https://www.who.int/fr/emergencies/diseases/novel-coronavirus-2019/advice-for-public/q-a-coronaviruses#:~:text=symptomes">Plus
-                    d'informations sur le site de l'OMS</a></p>
-        </div>
-        <div class="box">
-            <div class="box-img">
-                <img src="https://i.ya-webdesign.com/images/runny-nose-png-12.png" alt="Écoulement nasal">
-            </div>
-            <div class="box-content">
-                <p>Écoulement nasal (nez qui coule)</p>
-            </div>
-        </div>
-        <div class="box">
-            <div class="box-img">
-                <img src="https://cdn.onlinewebfonts.com/svg/img_493864.png" alt="Mal de Gorge">
-            </div>
-            <div class="box-content">
-                <p>Mal de gorge</p>
-            </div>
-        </div>
-        <div class="box">
-            <div class="box-img">
-                <img src="https://image.flaticon.com/icons/png/512/2328/2328501.png" alt="Toux">
-            </div>
-            <div class="box-content">
-                <p>Toux</p>
-            </div>
-        </div>
-        <div class="box">
-            <div class="box-img">
-                <img src="https://cdn.onlinewebfonts.com/svg/img_505486.png" alt="Fièvre">
-            </div>
-            <div class="box-content">
-                <p>Fièvre</p>
-            </div>
-        </div>
-        <div class="box">
-            <div class="box-img">
-                <img src="https://cdn4.iconfinder.com/data/icons/asthma-sickness/223/asthma-001-512.png"
-                     alt="Difficultés respiratoires">
-            </div>
-            <div class="box-content">
-                <p>Difficultés respiratoires</p>
-            </div>
-        </div>
-    </section>
-    <section id="cartes">
-        <div class="cartes">
-            <div class="pharmacies">
-                <p class="titre">Carte des pharmacies</p>
-                <p>Selon votre zone de résidence, trouvez des pharmacies pour vous procurer les différents produits
-                    utiles à la lutte contre la propagation de la covid-19.</p>
-                <iframe class="pharm"
-                        src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d31917.770343439195!2d9.450415!3d0.399585!3m2!1i1024!2i768!4f13.1!2m1!1spharmacie%20%C3%A0%20proximit%C3%A9%20de%20Estuaire%20de%20Gabon!5e0!3m2!1sfr!2sga!4v1584962661719!5m2!1sfr!2sga"
-                        width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""
-                        aria-hidden="false" tabindex="0"></iframe>
-            </div>
-            <div class="hopitaux">
-                <div class="listes">
-                    <p class="titre">Emplacement des structures adaptées</p>
-                    <p>Les différentes structures hospitalières habilitées à prendre en charge d'éventuels malades sont :
-                    </p>
-                    <ol>
-                        <li><a href="#carte-hiaobo">l'Hôpital d'Instruction des Armées Omar BONGO ONDIMBA (HIAOBO)</a></li>
-                        <li><a href="#carte-chul">le Centre Hospitalier Universitaire de Libreville (CHUL)</a></li>
-                        <li><a href="#carte-chua">Centre Hospitalier Universitaire d'Angondjé (CHUA)</a></li>
-                    </ol>
-                    <p>Si vous avez des symptômes n'hésitez pas à appeler <a href="tel:1410" class="numero-vert">le numéro vert (1410)</a> et rendez-vous dans l'une de
-                        ces structures pour une prise en charge optimale et gratuite.
-                        Ci-dessous vous avez la localisation de ces différentes structures: </p>
+                <div class="loading">
+                    <img src="assets/img/loading.gif" alt="image de chargement">
+                    <p>Un instant, nous chargeons le contenu.</p>
                 </div>
-                <div class="hiaobo" id="carte-hiaobo">
-                    <p class="bold">1- Hôpital d'Instruction des Armées Omar BONGO ONDIMBA (HIAOBO)</p>
-                    <iframe class="hia"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3354.9392847851855!2d9.504037795418345!3d0.4069810718584463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x107f3d00a757e0eb%3A0xe1f0069a94b2afd!2sHospital%20Instruction%20Of%20Arm%C3%A9es!5e0!3m2!1sfr!2sga!4v1584973936996!5m2!1sfr!2sga"
-                            width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""
-                            aria-hidden="false" tabindex="0"></iframe>
+        
+                <div class="body"></div>
+        
+            </section>
+        
+            <section id="symptomes">
+                <h1 class="hide-on-mobile-and-tablet heading-1">Les symptômes</h1>
+                <div class="remark text-center">
+                    <p>Les symptômes les plus courants de la COVID-19 sont cités ci-dessous. Notons aussi que ces symptômes sont
+                        généralement <a href="https://www.linternaute.fr/dictionnaire/fr/definition/benin/">bénins</a> et
+                        apparaissent de manière progressive.</p>
+                    <p>
+                        <a href="https://www.who.int/fr/emergencies/diseases/novel-coronavirus-2019/advice-for-public/q-a-coronaviruses#:~:text=symptomes">Plus
+                            d'informations sur le site de l'OMS</a></p>
                 </div>
-                <div class="chul" id="carte-chul">
-                    <p class="bold">2- Centre Hospitalier Universitaire de Libreville (CHUL)</p>
-                    <iframe class="chl"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1677.4726479955073!2d9.447639131513272!3d0.3922625022121046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x107f3b8c2fd56105%3A0x34cd852ffecbc37b!2sCentre%20Hospitalier%20Universitaire%20De%20Libreville!5e0!3m2!1sfr!2sga!4v1584974084150!5m2!1sfr!2sga"
-                            width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""
-                            aria-hidden="false" tabindex="0"></iframe>
+                <div class="boxes">
+                    <div class="box">
+                        <div class="box-img">
+                            <img src="https://i.ya-webdesign.com/images/runny-nose-png-12.png" alt="Écoulement nasal">
+                        </div>
+                        <div class="box-content">
+                            <p>Écoulement nasal (nez qui coule)</p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="box-img">
+                            <img src="https://cdn.onlinewebfonts.com/svg/img_493864.png" alt="Mal de Gorge">
+                        </div>
+                        <div class="box-content">
+                            <p>Mal de gorge</p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="box-img">
+                            <img src="https://image.flaticon.com/icons/png/512/2328/2328501.png" alt="Toux">
+                        </div>
+                        <div class="box-content">
+                            <p>Toux</p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="box-img">
+                            <img src="https://cdn.onlinewebfonts.com/svg/img_505486.png" alt="Fièvre">
+                        </div>
+                        <div class="box-content">
+                            <p>Fièvre</p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="box-img">
+                            <img src="https://cdn4.iconfinder.com/data/icons/asthma-sickness/223/asthma-001-512.png"
+                                 alt="Difficultés respiratoires">
+                        </div>
+                        <div class="box-content">
+                            <p>Difficultés respiratoires</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="chua" id="carte-chua">
-                    <p class="bold">3- Centre Hospitalier Universitaire d'Angondjé (CHUA)</p>
-                    <iframe class="cha"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1410.556047895163!2d9.403426607060984!3d0.5184420129897318!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x107f25d65e1a17d9%3A0x120be68d0fbd6f0c!2sCHU%20Angondje%20Cancerologie!5e0!3m2!1sfr!2sga!4v1584974580822!5m2!1sfr!2sga"
-                            width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""
-                            aria-hidden="false" tabindex="0"></iframe>
+            </section>
+        
+            <section id="cartes">
+                <h1 class="hide-on-mobile-and-tablet heading-1" >Trouver rapidement la pharmacie la plus proche</h1>
+                <div class="cartes">
+                    <div class="pharmacies">
+                        <p class="titre">Carte des pharmacies</p>
+                        <p>Selon votre zone de résidence, trouvez des pharmacies pour vous procurer les différents produits
+                            utiles à la lutte contre la propagation de la covid-19.</p>
+                        <iframe class="pharm"
+                                src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d31917.770343439195!2d9.450415!3d0.399585!3m2!1i1024!2i768!4f13.1!2m1!1spharmacie%20%C3%A0%20proximit%C3%A9%20de%20Estuaire%20de%20Gabon!5e0!3m2!1sfr!2sga!4v1584962661719!5m2!1sfr!2sga"
+                                width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""
+                                aria-hidden="false" tabindex="0"></iframe>
+                    </div>
+                    <div class="hopitaux">
+                        <div class="listes">
+                            <p class="titre">Emplacement des structures adaptées</p>
+                            <p>Les différentes structures hospitalières habilitées à prendre en charge d'éventuels malades sont :
+                            </p>
+                            <ol>
+                                <li><a href="#carte-hiaobo">l'Hôpital d'Instruction des Armées Omar BONGO ONDIMBA (HIAOBO)</a></li>
+                                <li><a href="#carte-chul">le Centre Hospitalier Universitaire de Libreville (CHUL)</a></li>
+                                <li><a href="#carte-chua">Centre Hospitalier Universitaire d'Angondjé (CHUA)</a></li>
+                            </ol>
+                            <p>Si vous avez des symptômes n'hésitez pas à appeler <a href="tel:1410" class="numero-vert">le numéro vert (1410)</a> et rendez-vous dans l'une de
+                                ces structures pour une prise en charge optimale et gratuite.
+                                Ci-dessous vous avez la localisation de ces différentes structures: </p>
+                        </div>
+                        <div class="hiaobo" id="carte-hiaobo">
+                            <p class="bold">1- Hôpital d'Instruction des Armées Omar BONGO ONDIMBA (HIAOBO)</p>
+                            <iframe class="hia"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3354.9392847851855!2d9.504037795418345!3d0.4069810718584463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x107f3d00a757e0eb%3A0xe1f0069a94b2afd!2sHospital%20Instruction%20Of%20Arm%C3%A9es!5e0!3m2!1sfr!2sga!4v1584973936996!5m2!1sfr!2sga"
+                                    width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""
+                                    aria-hidden="false" tabindex="0"></iframe>
+                        </div>
+                        <div class="chul" id="carte-chul">
+                            <p class="bold">2- Centre Hospitalier Universitaire de Libreville (CHUL)</p>
+                            <iframe class="chl"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1677.4726479955073!2d9.447639131513272!3d0.3922625022121046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x107f3b8c2fd56105%3A0x34cd852ffecbc37b!2sCentre%20Hospitalier%20Universitaire%20De%20Libreville!5e0!3m2!1sfr!2sga!4v1584974084150!5m2!1sfr!2sga"
+                                    width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""
+                                    aria-hidden="false" tabindex="0"></iframe>
+                        </div>
+                        <div class="chua" id="carte-chua">
+                            <p class="bold">3- Centre Hospitalier Universitaire d'Angondjé (CHUA)</p>
+                            <iframe class="cha"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1410.556047895163!2d9.403426607060984!3d0.5184420129897318!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x107f25d65e1a17d9%3A0x120be68d0fbd6f0c!2sCHU%20Angondje%20Cancerologie!5e0!3m2!1sfr!2sga!4v1584974580822!5m2!1sfr!2sga"
+                                    width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""
+                                    aria-hidden="false" tabindex="0"></iframe>
+                        </div>
+                    </div>
+                    <div class="zones">
+                        <p class="titre">Zones à Risques</p>
+                        <p>Les rassemblements de plus de 30 personnes étant interdits pour éviter toute propagation de la covid-19,
+                            les zones à risques et à éviter sont les zones à fortes affluences tels que : les marchés, les gares, etc.
+                        </p>
+                        <iframe class="zone"
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3354.9423271964874!2d9.453055778150846!3d0.3995994220573597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sga!4v1584974680412!5m2!1sfr!2sga"
+                                width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""
+                                aria-hidden="false" tabindex="0"></iframe>
+                    </div>
                 </div>
-            </div>
-            <div class="zones">
-                <p class="titre">Zones à Risques</p>
-                <p>Les rassemblements de plus de 30 personnes étant interdits pour éviter toute propagation de la covid-19,
-                    les zones à risques et à éviter sont les zones à fortes affluences tels que : les marchés, les gares, etc.
+            </section>
+            
+            <section id="contacts">
+                <p>
+                    <i class="fa fa-clock-o fa-2x"></i><br>
+                    Bientôt disponible <br><br>
+        
+        
+                    Dans cette rubrique il y aura des numéros utiles en cas
+                    d'urgence
                 </p>
-                <iframe class="zone"
-                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3354.9423271964874!2d9.453055778150846!3d0.3995994220573597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sga!4v1584974680412!5m2!1sfr!2sga"
-                        width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""
-                        aria-hidden="false" tabindex="0"></iframe>
-            </div>
+                <p class="text-notif hide">Activez les notifications afin d'être notifié lorsque la rubrique sera disponible</p>
+                <button class="button button-notif hide"><i class="fa fa-bell"></i> <span>Activer les notifications</span>
+                </button>
+            </section>
         </div>
-    </section>
-    <section id="contacts">
-        <p>
-            <i class="fa fa-clock-o fa-2x"></i><br>
-            Bientôt disponible <br><br>
+    
+        <aside>
+            <section id="ailleurs">
+                <h1 class="hide-on-mobile-and-tablet heading-2 more-info">Plus d'info</h1>
+                <div class="loading">
+                    <img src="assets/img/loading.gif" alt="image de chargement">
+                    <p>Un instant, nous chargeons le contenu.</p>
+                </div>
+        
+                <div class="body"></div>
+        
+            </section>
+        </aside>
 
+    </div>
 
-            Dans cette rubrique il y aura des numéros utiles en cas
-            d'urgence
-        </p>
-        <p class="text-notif hide">Activez les notifications afin d'être notifié lorsque la rubrique sera disponible</p>
-        <button class="button button-notif hide"><i class="fa fa-bell"></i> <span>Activer les notifications</span>
-        </button>
-    </section>
-
-    <section id="ailleurs">
-
-        <div class="loading">
-            <img src="assets/img/loading.gif" alt="image de chargement">
-            <p>Un instant, nous chargeons le contenu.</p>
-        </div>
-
-        <div class="body"></div>
-
-    </section>
-
-    <footer>
+    <footer class="hide-on-desktop">
         <ul>
             <li data-target="#home" class="active"><i class="fa fa-home fa-3x"></i><span>Accueil</span></li>
             <li data-target="#symptomes"><i class="fa fa-frown-o fa-3x"></i><span>Symptômes</span></li>
