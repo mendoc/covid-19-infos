@@ -51,15 +51,25 @@
 
     <section class="show" id="home">
 
+        <div class="compteur">
+            <div class="compteur-title">Statistiques du Gabon</div>
+            <div class="compteur-body">
+                <div>
+                    <p>Personnes<br> contaminées<br><span class="blue">7</span></p>
+                </div>
+                <div><p>Nombre<br> de décès<br><span class="red">1</span></p>
+
+                </div>
+            </div>
+            <div class="compteur-footer">Mis à jour le mardi 26 mars 2020</div>
+        </div>
         <div class="loading">
             <img src="assets/img/loading.gif" alt="image de chargement">
-            <p>Un instant, nous chargeons le contenu.</p>
+            <p class="text-center">Lavez vos mains afin d'éviter la propagation de la COVID-19</p>
         </div>
-
         <div class="body"></div>
 
     </section>
-
     <section id="symptomes">
         <div class="remark text-center">
             <p>Les symptômes les plus courants de la COVID-19 sont cités ci-dessous. Notons aussi que ces symptômes sont
@@ -183,7 +193,6 @@
         <button class="button button-notif hide"><i class="fa fa-bell"></i> <span>Activer les notifications</span>
         </button>
     </section>
-
     <section id="ailleurs">
 
         <div class="loading">
@@ -201,7 +210,7 @@
             <li data-target="#symptomes"><i class="fa fa-frown-o fa-3x"></i><span>Symptômes</span></li>
             <li data-target="#cartes"><i class="fa fa-map fa-3x"></i><span>Cartes</span></li>
             <li data-target="#contacts"><i class="fa fa-phone fa-3x"></i><span>Contacts</span></li>
-            <li data-target="#ailleurs"><i class="fa fa-globe fa-3x"></i><span>Ailleurs</span></li>
+            <li class="hide" data-target="#ailleurs"><i class="fa fa-globe fa-3x"></i><span>Ailleurs</span></li>
         </ul>
     </footer>
 </main>

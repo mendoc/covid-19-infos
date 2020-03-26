@@ -97,6 +97,52 @@ section > p {
     color: #707070;
 }
 
+/* =================== Section Accueil =============== */
+
+.compteur {
+    background-color: #fff;
+    border-radius: 7px;
+    box-shadow: 0 0 7px rgba(0, 0, 0, .16);
+    margin-bottom: 15px;
+}
+
+.compteur .compteur-title {
+    background-color: #1565c0;
+    color: #ffffff;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    margin-bottom: 15px;
+    padding: 10px;
+    text-align: center;
+}
+
+.compteur .compteur-body {
+    display: flex;
+    justify-content: space-around;
+}
+
+.compteur .compteur-body p {
+    text-align: center;
+    flex: 1 1 0;
+    margin-top: 0;
+}
+.compteur .compteur-body p span {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.compteur .compteur-footer {
+    background-color: #eee;
+    color: #707070;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    margin-bottom: 15px;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.8em;
+    font-style: italic;
+}
+
 /* =================== Section Symptomes =============== */
 
 .remark {
@@ -379,6 +425,13 @@ footer li i {
     text-align: center;
 }
 
+.blue {
+    color: #1565C0;
+}
+
+.red {
+    color: #c0170c;
+}
 .bold {
     font-weight: bold;
 }
