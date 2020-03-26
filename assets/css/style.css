@@ -568,6 +568,35 @@ footer li i {
     .button-notif i{
         animation: pushme .8s ease-out 1s infinite;
     }
+
+    .contact form{
+        width: 60%;
+        margin: auto;
+    }
+
+    .input-field{
+        justify-content: space-between;
+    }
+
+    .input-field input{
+        flex: 1;
+    }
+
+    .input-field i{
+        margin: 0 .5em;
+    }
+
+    .comment-field{
+        margin-bottom: 1em;
+    }
+
+    #contacts legend{
+        font-size: 1.5em;
+    }
+
+    #contacts button{
+        font-size: 1.1em;
+    }
 }
 
 @media (max-width:1024px){
