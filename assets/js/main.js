@@ -69,4 +69,15 @@ $(document).ready(function () {
     const RSS_URL = `https://www.mediapart.fr/articles/feed`;
     getCovidRSS(RSS_URL);
 
+    // Activation des liens sur desktop
+    if(document.body.clientWidth >= 1024 ){
+        let navLinks = $(".nav-link a");
+        navLinks.click(function () {
+
+            navLinks.removeClass("is-active");
+            $(this).addClass("is-active");
+
+        });
+    }
+
 });

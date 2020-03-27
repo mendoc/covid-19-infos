@@ -41,36 +41,92 @@
 <body>
 <main>
     <header>
-        <a href="#home">COVID-19 Infos</a>
-        <div class="button-notif hide">
-            <i class="fa fa-bell"></i>
-            <span>Activer</span>
+        <div class="hide-on-desktop nav-mobile">
+            <a href="#home">COVID-19 Infos</a>
+            <div class="button-notif hide">
+                <i class="fa fa-bell"></i>
+                <span>Activer</span>
+            </div>
+            <a href="tel:1410">Appeler <br>gratuitement le <br>1410</a>
         </div>
-        <a href="tel:1410">Appeler <br>gratuitement le <br>1410</a>
     </header>
+
+    <div class="slider show-on-desktop">
+        <!-- On ne peut avoir que ces 3 div pour le moment -->
+        <div class="slide-1">Lavez vos mains regulierement </div>
+        <div class="slide-2">Tousser ou eternuer dans votre coude</div>
+        <div class="slide-3">Saluer sans se serrer la main, evitez les embrassades</div>
+    </div>
+
+    <nav class="show-on-desktop nav-desktop">
+        <div class="nav-logo">
+            COVID-19 Infos
+        </div>
+        <ul class="nav-wrapper">
+            <li class="nav-link">
+                <a href="#" class="is-active">Accueil</a>
+            </li>
+            <li class="nav-link">
+                <a href="#symptomes">Symptômes</a>
+            </li>
+            <li class="nav-link">
+                <a href="#cartes">Cartes</a>
+            </li>
+            <li class="nav-link">
+                <a href="#contacts">Contacts</a>
+            </li>
+            <li class="button-notif hide">
+                <i class="fa fa-bell"></i>
+            </li>
+        </ul>
+    </nav>
 
     <section class="show" id="home">
 
-        <div class="compteur">
-            <div class="compteur-title">Statistiques du Gabon</div>
-            <div class="compteur-body">
-                <div>
-                    <p>Personnes<br> contaminées<br><span id="contaminations" class="blue">-</span></p>
-                </div>
-                <div><p>Nombre<br> de décès<br><span id="deces" class="red">-</span></p>
-
-                </div>
+        <div class="banner">
+            <div class="banner-logo show-on-desktop">
+                <img src="assets/img/logo_temp.png" alt="Covid-19 Info png">
             </div>
-            <div class="compteur-footer"><span id="updateTime">--</span></div>
+            <div class="compteur">
+                <div class="compteur-title">Statistiques du Gabon</div>
+                <div class="compteur-body">
+                    <div>
+                        <p>Personnes<br> contaminées<br><span id="contaminations" class="blue">-</span></p>
+                    </div>
+                    <div><p>Nombre<br> de décès<br><span id="deces" class="red">-</span></p>
+    
+                    </div>
+                </div>
+                <div class="compteur-footer"><span id="updateTime">--</span></div>
+            </div>
         </div>
-        <div class="loading">
-            <img src="assets/img/loading.gif" alt="image de chargement">
-            <p class="text-center">Lavez vos mains afin d'éviter la propagation de la COVID-19</p>
-        </div>
-        <div class="body"></div>
 
+        <!-- Les actualites -->
+        <div class="articles">
+            <div class="news-articles">
+                <h1 class="title-bar show-on-desktop">Articles</h1>
+                <div class="loading">
+                    <img src="assets/img/loading.gif" alt="image de chargement">
+                    <p class="text-center">Lavez vos mains afin d'éviter la propagation de la COVID-19</p>
+                </div>
+                <div class="body news-articles-content"></div>
+            </div>
+            <div class="other-article show-on-desktop">
+                <h1 class="title-bar">Plus d'infos</h1>
+                <ul class="other-article-content">
+                    <li>
+                        <a href="https://news.un.org/fr/story/2020/02/1062151">La Lutte contre le corona virus en Chine</a>
+                    </li>
+                    <li>
+                        <a href="https://ga.ambafrance.org/Informations-Coronavirus-Covid-19">Information coronavirus Gabon</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </section>
+
     <section id="symptomes">
+        <h1 class="heading-1 show-on-desktop">Les différents symptômes</h1>
         <div class="remark text-center">
             <p>Les symptômes les plus courants de la COVID-19 sont cités ci-dessous. Notons aussi que ces symptômes sont
                 généralement <a href="https://www.linternaute.fr/dictionnaire/fr/definition/benin/">bénins</a> et
@@ -79,49 +135,57 @@
                 <a href="https://www.who.int/fr/emergencies/diseases/novel-coronavirus-2019/advice-for-public/q-a-coronaviruses#:~:text=symptomes">Plus
                     d'informations sur le site de l'OMS</a></p>
         </div>
-        <div class="box">
-            <div class="box-img">
-                <img src="https://i.ya-webdesign.com/images/runny-nose-png-12.png" alt="Écoulement nasal">
+
+        <div class="boxes">
+
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://i.ya-webdesign.com/images/runny-nose-png-12.png" alt="Écoulement nasal">
+                </div>
+                <div class="box-content">
+                    <p>Écoulement nasal (nez qui coule)</p>
+                </div>
             </div>
-            <div class="box-content">
-                <p>Écoulement nasal (nez qui coule)</p>
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://cdn.onlinewebfonts.com/svg/img_493864.png" alt="Mal de Gorge">
+                </div>
+                <div class="box-content">
+                    <p>Mal de gorge</p>
+                </div>
             </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://image.flaticon.com/icons/png/512/2328/2328501.png" alt="Toux">
+                </div>
+                <div class="box-content">
+                    <p>Toux</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://cdn.onlinewebfonts.com/svg/img_505486.png" alt="Fièvre">
+                </div>
+                <div class="box-content">
+                    <p>Fièvre</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://cdn4.iconfinder.com/data/icons/asthma-sickness/223/asthma-001-512.png"
+                        alt="Difficultés respiratoires">
+                </div>
+                <div class="box-content">
+                    <p>Difficultés respiratoires</p>
+                </div>
+            </div>
+
         </div>
-        <div class="box">
-            <div class="box-img">
-                <img src="https://cdn.onlinewebfonts.com/svg/img_493864.png" alt="Mal de Gorge">
-            </div>
-            <div class="box-content">
-                <p>Mal de gorge</p>
-            </div>
-        </div>
-        <div class="box">
-            <div class="box-img">
-                <img src="https://image.flaticon.com/icons/png/512/2328/2328501.png" alt="Toux">
-            </div>
-            <div class="box-content">
-                <p>Toux</p>
-            </div>
-        </div>
-        <div class="box">
-            <div class="box-img">
-                <img src="https://cdn.onlinewebfonts.com/svg/img_505486.png" alt="Fièvre">
-            </div>
-            <div class="box-content">
-                <p>Fièvre</p>
-            </div>
-        </div>
-        <div class="box">
-            <div class="box-img">
-                <img src="https://cdn4.iconfinder.com/data/icons/asthma-sickness/223/asthma-001-512.png"
-                     alt="Difficultés respiratoires">
-            </div>
-            <div class="box-content">
-                <p>Difficultés respiratoires</p>
-            </div>
-        </div>
+
     </section>
+
     <section id="cartes">
+        <h1 class="heading-1 show-on-desktop">Une Orientation ?</h1>
         <div class="cartes">
             <div class="pharmacies">
                 <p class="titre">Carte des pharmacies</p>
@@ -193,25 +257,17 @@
         <button class="button button-notif hide"><i class="fa fa-bell"></i> <span>Activer les notifications</span>
         </button>
     </section>
-    <section id="ailleurs">
-
-        <div class="loading">
-            <img src="assets/img/loading.gif" alt="image de chargement">
-            <p>Un instant, nous chargeons le contenu.</p>
-        </div>
-
-        <div class="body"></div>
-
-    </section>
 
     <footer>
-        <ul>
+        <ul class="hide-on-desktop">
             <li data-target="#home" class="active"><i class="fa fa-home fa-3x"></i><span>Accueil</span></li>
             <li data-target="#symptomes"><i class="fa fa-frown-o fa-3x"></i><span>Symptômes</span></li>
             <li data-target="#cartes"><i class="fa fa-map fa-3x"></i><span>Cartes</span></li>
             <li data-target="#contacts"><i class="fa fa-phone fa-3x"></i><span>Contacts</span></li>
-            <li class="hide" data-target="#ailleurs"><i class="fa fa-globe fa-3x"></i><span>Ailleurs</span></li>
         </ul>
+        <div class="footer show-on-desktop">
+            <i class="fa fa-copyright" aria-hidden="true"></i> Copyright by Ecole241
+        </div>
     </footer>
 </main>
 

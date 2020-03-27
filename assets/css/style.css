@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway|Poppins|Montserrat&display=swap');
 
 
 /* ============== Regles generales ============== */
@@ -17,7 +17,7 @@ a {
 
 /* =================== Topbar =================== */
 
-header {
+.nav-mobile {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,7 +28,7 @@ header {
     box-shadow: rgba(0, 0, 0, .2) 0 3px 6px;
 }
 
-header > a:first-of-type {
+.nav-mobile > a:first-of-type {
     flex-basis: 45%;
     padding-left: 10px;
     font-weight: bold;
@@ -36,22 +36,22 @@ header > a:first-of-type {
     color: #707070;
 }
 
-header div {
+.nav-mobile div {
     text-align: center;
     padding: 5px 0;
 }
 
-header div i {
+.nav-mobile div i {
     color: #707070;
 }
 
-header div span {
+.nav-mobile div span {
     display: block;
     font-size: .6rem;
     color: rgba(0, 0, 0, .66)
 }
 
-header a:last-of-type {
+.nav-mobile a:last-of-type {
     text-align: center;
     background-color: #169F20;
     color: #fff;
@@ -434,4 +434,277 @@ footer li i {
 }
 .bold {
     font-weight: bold;
+}
+
+@media (min-width:1024px){
+
+    html{
+        scroll-behavior: smooth;
+    }
+
+    .hide-on-desktop{
+        display: none;
+    }
+
+    .slider{
+        background-color: #4267b2;
+        color: #ffffff;
+        position: relative;
+        height: 5vh;
+    }
+
+    .slide-1,.slide-2,.slide-3{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        text-transform: uppercase;
+        font-weight: 600;
+        transform: translate(-50%,-50%);
+        animation-duration: 9s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in;
+    }
+
+    .slide-1{
+        animation-name: fadeIn-1;
+    }
+
+    .slide-2{
+        animation-name: fadeIn-2;
+    }
+
+    .slide-3{
+        animation-name: fadeIn-3;
+    }
+
+    .nav-desktop{
+        position: -webkit-sticky;
+        position: sticky;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 9vh;
+        top: 0;
+        background-color: #ffffff;
+    }
+
+    .nav-wrapper{
+        display: flex;
+        list-style: none;
+        justify-content: center;
+    }
+
+    .nav-link{
+        margin: 0 1em;
+    }
+
+    .nav-link > a{
+        text-transform: uppercase;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+        font-family: 'Poppins',sans-serif;
+        border-bottom-color: transparent;
+        border-bottom-width: 3px;
+        border-bottom-style: solid;
+        transition: border-bottom .5s;
+    }
+
+    .nav-link > a:hover, a.is-active{
+        border-bottom-color: #1565c0;
+    }
+
+    .button-notif{
+        font-size: 1.4em;
+        cursor: pointer;
+        color: #4267b2;
+        animation: push-me 1s ease-in 3s 5;
+    }
+
+    .nav-logo{
+        position: absolute;
+        left: 9px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.5em;
+        color: #707070;
+    }
+
+    /* ============= Banner Style =============== */
+
+    .banner{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 50vh;
+    }
+
+    section{
+        display: block;
+    }
+
+    /* ============== Article Section ============== */
+
+    .articles{
+        width: 98%;
+        margin: auto;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .title-bar{
+        background-color: #1565c0;
+        color: #ffffff;
+        padding: 0.7em 1em;
+    }
+
+    .news-articles{
+        width: 70%;
+    }
+
+    .news-articles-content{
+        /* width: 100%; */
+        overflow-y: scroll;
+        padding: 1em;
+        box-sizing: border-box;
+        height: 80vh;
+    }
+
+
+    .other-article{
+        width: 25%;
+    }
+
+    .other-article h1{
+        margin-bottom: 0;
+    }
+
+    .other-article-content{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        border-left: #c7c5c5 1px solid;
+        border-right: solid 1px #707070;
+    }
+
+    .other-article-content  li{
+        border-bottom: 1px solid #707070;
+        padding: .5em .25em;
+    }
+
+    .other-article-content li:hover{
+        background-color: #d3cfcf;
+    }
+
+    .publication {
+        width: 80%;
+        margin: auto;
+        border-radius: 0;
+    }
+    
+    .publication .title{
+        border-radius: 0;
+    }
+
+    /* ============== Symptomes Section ================= */
+    .boxes{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+    }
+
+    .box{
+        width: 25vw;
+    }
+
+    /* =============== Cartes Section ===================== */
+    #cartes > .cartes .hopitaux{
+        width: 90%;
+        margin: auto;
+        display: flex;
+        flex-flow: wrap row;
+        justify-content: space-around;
+    }
+
+    .cartes > div:first-child , .cartes > div:last-child{
+        width: 60%;
+        margin: auto;
+    }
+
+    /* =============== Composant =================== */
+    .heading-1{
+        font-family: 'Raleway','Times New Roman', Times, serif;
+        font-size: 2em;
+        text-align: center;
+        text-decoration: #1565c0 underline;
+    }
+
+    /* =============== footer =========== */
+
+    footer{
+        position: initial;
+    }
+
+    .footer{
+        background-color: #1565c0;
+        color: #ffffff;
+        height: 6vh;
+        font-weight: 600;
+        padding: .5em 1em;
+        box-sizing: border-box;
+    }
+}
+
+@keyframes fadeIn-1{
+    0%,29%{
+        opacity: 1;
+    }
+    33%,61%{
+        opacity: 0;
+    }
+
+    66%,100%{
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn-2{
+    0%,29%{
+        opacity: 0;
+    }
+    33%,61%{
+        opacity: 1;
+    }
+
+    66%,100%{
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn-3{
+    0%,29%{
+        opacity: 0;
+    }
+    33%,61%{
+        opacity: 0;
+    }
+
+    66%,100%{
+        opacity: 1;
+    }
+}
+
+@keyframes push-me{
+    from{
+        transform: scale(1.1);
+    }
+
+    to{
+        transform: scale(.8);
+    }
+}
+
+@media (max-width:1024px){
+    .show-on-desktop{
+        display: none;
+    }
 }
