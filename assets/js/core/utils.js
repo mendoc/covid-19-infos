@@ -34,14 +34,6 @@ function write(path, value, success, error) {
         });
 }
 
-function getKey() {
-    return firebase.database().ref().push().key;
-}
-
-function getNotificationPermissionAsked() {
-    return (window.Notification && Notification.permission !== "granted" && Notification.permission !== "denied");
-}
-
 function showBody(selector) {
     $(`#${selector} .body`).css("display", "block");
 }
@@ -96,59 +88,6 @@ function addPub(data, section = 'home') {
             </div>
         </div>`;
     $(`#${section} .body`).append(item);
-}
-
-
-/**
- * Place une information provenant d'une url dans l'acceuil
- * @param {string} RSS_URL
- */
-function getCovidRSS(RSS_URL) {
-
-    const covidRegex = /(covid-19|coronavirus)/gmi;
-
-    $.ajax(RSS_URL, {
-        accepts: {
-            xml: "application/rss+xml"
-        },
-        dataType: "xml",
-        success: function (data) {
-            // On retient le nom de la source
-            const source = $(data).find("channel").find("title").get()[0].textContent;
-
-            $(data)
-                .find("item")
-                .each(function () {
-                    const el = $(this);
-                    const title = el.find("title").text();
-                    const description = el.find("description").text();
-                    const subjectCovidTabs = [...title.matchAll(covidRegex), ...description.matchAll(covidRegex)];
-
-                    if (subjectCovidTabs && subjectCovidTabs.length > 0) {
-
-                        const imageUrl = el.get()[0].querySelector('content') ? el.get()[0].querySelector('content').getAttribute('url') : `https://fcw.com/-/media/GIG/EDIT_SHARED/Health-IT/covid19.jpg`;
-                        const date = new Date(el.find("pubDate").text());
-
-                        const params = {
-                            titre: title,
-                            image: imageUrl,
-                            pubDate: date,
-                            description: description,
-                            sourceNom: source,
-                            sourceLien: el.find("link").text()
-                        };
-                        addPub(params, "ailleurs");
-                    }
-                });
-            // Gestion du clic sur le bouton de partage
-            let btns = $('#ailleurs .content button');
-            btns.each(function () {
-                addClickEvent($(this));
-            });
-            loader("ailleurs", false);
-            showBody("ailleurs");
-        }
-    })
 }
 
 function addClickEvent(el) {

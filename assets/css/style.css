@@ -55,14 +55,14 @@ header a:last-of-type {
     text-align: center;
     background-color: #169F20;
     color: #fff;
-    font-size: .7rem;
+    font-size: .9rem;
     padding: 5px 7px;
 }
 
 /* ============ Styles des sections ============ */
 
 section {
-    margin: 50px 0 65px 0;
+    margin: 65px 0 65px 0;
     display: none;
     padding: 16px;
 }
