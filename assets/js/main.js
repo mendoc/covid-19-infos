@@ -64,6 +64,19 @@ $(document).ready(function () {
         showBody("home");
         loader("home", false);
     });
+    const bgDarkStyle = 'darkbg'
+    const textWhiteStyle = 'text-white'
+    const bgDarkImgStyle = 'darkbg_img'
+    $('#btn-night-mode').click(function(){
+        $('.compteur').toggleClass(`${bgDarkStyle} ${textWhiteStyle}`)
+        $('body').toggleClass(bgDarkStyle)
+        $('header').toggleClass(`${bgDarkStyle} ${textWhiteStyle}`)
+        $(".publication .content").toggleClass('bg-dark-2 text-white')
+        $("#symptomes .remark").toggleClass(`${bgDarkStyle} ${textWhiteStyle}`)
+        $("#symptomes .box").toggleClass(`${bgDarkImgStyle} ${textWhiteStyle}`)
+        $("#cartes .cartes").toggleClass(`${bgDarkStyle} ${textWhiteStyle}`)
+        $("footer").toggleClass(`${bgDarkStyle} ${textWhiteStyle}`)
+    })
 
     // Récuperation des flux rss
     const RSS_URL = `https://www.mediapart.fr/articles/feed`;
