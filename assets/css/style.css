@@ -387,10 +387,16 @@ section > p {
     outline-color: #4267b2;
 }
 
+.comment-field{
+    width: 98%;
+    margin: auto;
+}
+
 .comment-field textarea{
     font-family: 'Montserrat',sans-serif;
     padding: .25em;
     box-sizing: border-box;
+    width: 100%;
 }
 
 /* =================== Footer =================== */
