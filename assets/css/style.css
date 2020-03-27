@@ -337,6 +337,7 @@ footer {
 
 footer ul {
     display: flex;
+    width: 90%;
     justify-content: space-between;
     padding: 0;
     margin: 0;
@@ -437,6 +438,72 @@ footer li i {
     font-weight: bold;
 }
                                         /* style css du mode nuit  */
+
+        /* début toggle button */
+footer{
+    display: flex;
+    justify-content: space-between;
+}
+
+ footer input[type="checkbox"]{
+ 
+    -webkit-appearance: none;
+    visibility: hidden;
+    display: none;
+
+}
+.check{
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 20px;
+    background-color: rgb(25, 43, 44);
+    cursor: pointer;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: ease-in 0.5s;
+}
+footer input[type="checkbox"]:checked ~ .check {
+    background-color:#fff;
+    box-shadow: 0 0 0 1px rgb(25, 43, 44);
+}
+.check::before{
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    background-color: #fff;
+    width: 16px ;
+    height: 16px;
+    border-radius: 50%;
+    transition: 0.5S;
+}
+
+footer input[type="checkbox"]:checked ~ .check::before{
+
+    transform: translateX(-50px);
+}
+
+.check::after{
+    content: '';
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background-color: rgb(25, 43, 44);
+    width: 16px ;
+    height: 16px;
+    border-radius: 50%;
+    transition: 0.5S;
+    transform: translateX(50px);
+
+}
+
+footer input[type="checkbox"]:checked ~ .check::after{
+
+    transform: translateX(0);
+}
+        /* fin toggle button */
+
 .darkbg{
  background-color:  rgb(4, 4, 12) ;
 }
