@@ -446,6 +446,9 @@ footer li i {
 .darkbg_div{
     background-color: #040404;
 }
+.darkbg_p{
+    background-color: rgb(3, 3, 26);
+}
 
 .darkshadow{
     box-shadow: rgba(255, 254, 254, 0.2) 0 3px 6px;
