@@ -544,8 +544,29 @@ footer li i {
     font-weight: bold;
 }
 
-@media (max-width:1024px) and (min-width: 780px){
+@media (max-width:1024px) and (min-width: 320px){
     header{
         height: 10vh;
     }
+
+.contacter {
+  border-left: 0;
+  border-right: 0;
+  background-color: #1565c0;
+  margin-top: 19px;
+  margin-bottom: -125px;
+  height: 35px;
+  padding-top: 19px;
+  padding-bottom: 10px;
+}
+
+.urgent1 {
+  font-size: 13px;
+  color: #fff;
+}
+
+.urgent2 {
+  font-size: 13px;
+  color: #ff0000;
+}
 }

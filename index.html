@@ -41,13 +41,12 @@
         gtag('js', new Date());
 
         gtag('config', 'UA-161415127-1');
-    </script>
-     <!-- if browsesupport service worker-->
-    <script>
-        if('serviceWorker' in navigator) {
+
+         if('serviceWorker' in navigator) {
           navigator.serviceWorker.register('sw.js');
         };
-      </script>
+    </script>
+     <!-- if browsesupport service worker-->
 </head>
 <body>
 <main>
