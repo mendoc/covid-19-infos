@@ -5,6 +5,7 @@ function cons(stuff) {
 }
 
 function listenPubs(path, callback) {
+    loadConseil();
     db.collection(path).orderBy('pubDate', 'desc')
         .onSnapshot(function (collection) {
             callback(collection);
@@ -151,3 +152,27 @@ const copyToClipboard = str => {
     document.execCommand('copy');
     document.body.removeChild(el);
 };
+
+function loadConseil() {
+    let conseils = [
+        "Se laver fréquemment les mains avec une solution  hydroalcoolique ou à l’eau et du savon",
+        "Tousser ou éternuer dans son coude.",
+        "Utiliser un mouchoir à usage unique et le jeter.",
+        "Saluer sans se serrer la main , éviter les embrassades.",
+        "Éviter de se toucher les yeux, le nez et la bouche.",
+        "Tenez-vous informé et suivez les conseils d'hygiènes.",
+        "Eviter les balades inutiles.",
+        "Si vous avez les symptômes liés au coronavirus ne pas stresser appelez le 1410.",
+        "Portez un masque si vous toussez ou éternuez.",
+        "Ne pas laver puis réutiliser un masque.",
+        "Ne pas utiliser le masque de quelqu’un d’autre.",
+        "Eviter l’automédication (avoir l’avis d’un médecin).",
+        "Adultes comme enfants doivent respecter les mesures d’hygiènes.",
+        "Limiter les déplacements, restez chez soi autant que possible.",
+        "Désinfecter les surfaces (sols, meubles, ordinateurs, téléphones…)"
+    ];
+    let message = $('.loading p.message')[0];
+    let indice = Math.floor(Math.random() * conseils.length);
+    cons(message);
+    message.textContent = conseils[indice];
+}
