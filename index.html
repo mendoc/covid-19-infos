@@ -50,19 +50,44 @@
     </header>
 
     <section class="show" id="home">
-
+        <p class="actu-title blue bold">Statistiques</p>
         <div class="compteur">
-            <div class="compteur-title">Statistiques du Gabon</div>
+            <div class="compteur-title bg-blue">Statistiques du Gabon</div>
             <div class="compteur-body">
                 <div>
                     <p>Personnes<br> contaminées<br><span id="contaminations" class="blue">-</span></p>
                 </div>
-                <div><p>Nombre<br> de décès<br><span id="deces" class="red">-</span></p>
-
+                <div>
+                    <p>Nombre<br> de décès<br><span id="deces" class="red">-</span></p>
+                </div>
+                <div>
+                    <p>Personnes <br>guéries<br><span id="gueris" class="green">-</span></p>
                 </div>
             </div>
-            <div class="compteur-footer"><span id="updateTime">--</span></div>
+            <div class="compteur-footer">
+                <span id="updateTime">--</span><br>
+                <span>Source : Organisation Mondiale de la Santé</span></div>
         </div>
+
+        <div class="compteur global">
+            <div class="compteur-title bg-orange">Statistiques globales</div>
+            <div class="compteur-body">
+                <div>
+                    <p> Cas<br>confirmés<br><span id="g-confirmes" class="blue">-</span></p>
+                </div>
+                <div>
+                    <p>Nombre<br> de décès<br><span id="g-deces" class="red">-</span></p>
+                </div>
+                <div>
+                    <p>Pays <br>touchés<br><span id="g-touches" class="green">-</span></p>
+                </div>
+            </div>
+            <div class="compteur-footer">
+                <span id="g-updateTime">--</span><br>
+                <span>Source : Organisation Mondiale de la Santé</span>
+            </div>
+        </div>
+        <p class="actu-title blue bold">Actualité au Gabon</p>
         <div class="loading">
             <img src="assets/img/loading.gif" alt="image de chargement">
             <p class="text-center">Lavez vos mains afin d'éviter la propagation de la COVID-19</p>

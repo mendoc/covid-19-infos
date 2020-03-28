@@ -19,8 +19,14 @@ $(document).ready(function () {
             let data = stat.data();
             $('#contaminations').text(data.contaminations);
             $('#deces').text(data.deces);
+            $('#gueris').text(data.gueris);
+            $('#g-confirmes').text(data.g_confirmes);
+            $('#g-deces').text(data.g_deces);
+            $('#g-touches').text(data.g_touches);
             let d = moment(data.updateTime).format("dddd, Do MMMM YYYY");
+            let gd = moment(data.g_updateTime).format("dddd, Do MMMM YYYY");
             $('#updateTime').text(`Mis à jour le ${d}`);
+            $('#g-updateTime').text(`Mis à jour le ${gd}`);
         });
     });
 
