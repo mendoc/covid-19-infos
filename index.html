@@ -5,6 +5,11 @@
     <meta name=viewport content="width=device-width,initial-scale=1,user-scalable=no">
     <meta name="theme-color" content="#1565C0">
     <link rel="shortcut icon" href="assets/img/Covid19.png" type="image/x-icon">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#ff0000"/>
+    <link rel="manifest" href="manifest.json">
+
     <title>COVID-19 Infos</title>
 
     <link rel="stylesheet" href="assets/css/lib/font-awesome/css/font-awesome.min.css">
@@ -37,6 +42,12 @@
 
         gtag('config', 'UA-161415127-1');
     </script>
+     <!-- if browsesupport service worker-->
+    <script>
+        if('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('sw.js');
+        };
+      </script>
 </head>
 <body>
 <main>
