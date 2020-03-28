@@ -8,7 +8,7 @@ body {
     padding: 0;
     color: #000;
     font-family: 'Montserrat', sans-serif;
-    /* overflow-y: hidden; */
+    transition: all .5s;
 }
 
 a {
@@ -127,6 +127,7 @@ section > p {
     flex: 1 1 0;
     margin-top: 0;
 }
+
 .compteur .compteur-body p span {
     font-size: 2em;
     font-weight: bold;
@@ -204,7 +205,7 @@ section > p.actu-title {
     justify-content: center;
 }
 
-#cartes .hopitaux  > div p.bold {
+#cartes .hopitaux > div p.bold {
     text-align: start;
 }
 
@@ -284,6 +285,9 @@ section > p.actu-title {
 .publication .content {
     font-size: .7rem;
     padding: 10px;
+    transition: color .05s;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
 }
 
 .publication .content p {
@@ -337,7 +341,7 @@ section > p.actu-title {
 
 /* =============== fenetre modal =============== */
 
-.modal{
+.modal {
     position: fixed;
     z-index: 99;
     padding-top: 65px;
@@ -351,7 +355,7 @@ section > p.actu-title {
     box-sizing: border-box;
 }
 
-.modal .title{
+.modal .title {
     background-color: #ffffff;
     color: #707070;
     padding: 1em 10px;
@@ -359,7 +363,7 @@ section > p.actu-title {
     border-radius: 0;
 }
 
-.modal .content{
+.modal .content {
     font-size: 1em;
 }
 
@@ -369,15 +373,15 @@ section > p.actu-title {
     padding-right: 15px;
 }
 
-.modal .content .description{
+.modal .content .description {
     padding-top: 10px;
 }
 
-.modal .image{
+.modal .image {
     height: 200px;
 }
 
-#btn-close-modal{
+#btn-close-modal {
     color: #707070;
     font-size: 2em;
     border: none;
@@ -495,6 +499,7 @@ footer li i {
 .bg-orange {
     background-color: #ff6e08;
 }
+
 .blue {
     color: #1565C0;
 }
@@ -506,116 +511,139 @@ footer li i {
 .green {
     color: #49c958;
 }
+
 .bold {
     font-weight: bold;
 }
 
 /* =================== style css du mode nuit  =============*/
 
-        /* début toggle button */
-        footer{
-            display: flex;
-            justify-content: space-between;
-        }
-        
-        footer input[type="checkbox"]{
-         
-            -webkit-appearance: none;
-            visibility: hidden;
-            display: none;
-        
-        }
-        
-        .night-mode{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transform: rotate(90deg);
-        }
-        
-        .check{
-            position: relative;
-            display: block;
-            width: 40px;
-            height: 20px;
-            background-color: rgb(25, 43, 44);
-            cursor: pointer;
-            border-radius: 20px;
-            overflow: hidden;
-            transition: ease-in 0.5s;
-        }
-        footer input[type="checkbox"]:checked ~ .check {
-            background-color:#fff;
-            box-shadow: 0 0 0 1px rgb(25, 43, 44);
-        }
-        .check::before{
-            content: '';
-            position: absolute;
-            top: 2px;
-            left: 2px;
-            background-color: #fff;
-            width: 16px ;
-            height: 16px;
-            border-radius: 50%;
-            transition: 0.5S;
-        }
-        
-        footer input[type="checkbox"]:checked ~ .check::before{
-        
-            transform: translateX(-50px);
-        }
-        
-        .check::after{
-            content: '';
-            position: absolute;
-            top: 2px;
-            right: 2px;
-            background-color: rgb(25, 43, 44);
-            width: 16px ;
-            height: 16px;
-            border-radius: 50%;
-            transition: 0.5S;
-            transform: translateX(50px);
-        
-        }
-        
-        footer input[type="checkbox"]:checked ~ .check::after{
-        
-            transform: translateX(0);
-        }
-                /* fin toggle button */
-        
-        .darkbg{
-         background-color:  rgba(14, 13, 13, 0.904) !important;
-        }
-        
-        .bg-darkeen-2{
-            background-color: #00000081;
-        }
-        
-        .bg-dark-2{
-            background-color: #000000ee;
-        }
-        
-        .darkbg_header{
-            background-color:  rgba(21, 21, 29, 0.932);
-        }
-        .darkbg_div{
-            background-color: #040404;
-        }
-        .darkbg_p{
-            background-color: rgb(3, 3, 26);
-        }
-        
-        .darkbg_img{
-            background-color: #545454;
-        }
-        .text-white{
-            color: #F4F4F4 !important;
-        }
+/* début toggle button */
+footer {
+    display: flex;
+    justify-content: space-between;
+}
 
-@media (max-width:1024px) and (min-width: 780px){
-    header{
+footer input[type="checkbox"] {
+
+    -webkit-appearance: none;
+    visibility: hidden;
+    display: none;
+
+}
+
+.night-mode {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(90deg);
+}
+
+.check {
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 20px;
+    background-color: rgb(25, 43, 44);
+    cursor: pointer;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: ease-in 0.5s;
+}
+
+footer input[type="checkbox"]:checked ~ .check {
+    background-color: #fff;
+    box-shadow: 0 0 0 1px rgb(25, 43, 44);
+}
+
+.check::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    background-color: #fff;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    transition: 0.5S;
+}
+
+footer input[type="checkbox"]:checked ~ .check::before {
+
+    transform: translateX(-50px);
+}
+
+.check::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background-color: rgb(25, 43, 44);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    transition: 0.5S;
+    transform: translateX(50px);
+
+}
+
+footer input[type="checkbox"]:checked ~ .check::after {
+
+    transform: translateX(0);
+}
+
+/* fin toggle button */
+
+.darkbg {
+    background-color: rgba(14, 13, 13, 0.904) !important;
+}
+
+.darkbg .publication .content {
+    border-radius: 0;
+}
+
+.darkbg header > a:first-of-type {
+    color: #fff;
+}
+
+.darkbg .publication .pub-date i, .darkbg .publication time {
+    color: rgba(255, 255, 255, .45);
+}
+
+.darkbg .publication .pub-footer p {
+    color: #fff;
+}
+
+.bg-darkeen-2 {
+    background-color: #00000081;
+}
+
+.bg-dark-2 {
+    background-color: #000000ee;
+}
+
+.darkbg_header {
+    background-color: rgba(21, 21, 29, 0.932);
+}
+
+.darkbg_div {
+    background-color: #040404;
+}
+
+.darkbg_p {
+    background-color: rgb(3, 3, 26);
+}
+
+.darkbg_img {
+    background-color: #545454;
+}
+
+.text-white {
+    color: #F4F4F4 !important;
+}
+
+@media (max-width: 1024px) and (min-width: 780px) {
+    header {
         height: 10vh;
     }
 }
