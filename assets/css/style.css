@@ -107,6 +107,7 @@ section > p {
 }
 
 .compteur .compteur-title {
+    background-color: #1565c0;
     color: #ffffff;
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
@@ -130,10 +131,6 @@ section > p {
     font-weight: bold;
 }
 
-div.global .compteur-body p span {
-    font-size: 1.5em;
-}
-
 .compteur .compteur-footer {
     background-color: #eee;
     color: #707070;
@@ -144,11 +141,6 @@ div.global .compteur-body p span {
     text-align: center;
     font-size: 0.8em;
     font-style: italic;
-}
-
-section > p.actu-title {
-    margin-top: 10%;
-    font-size: 1.5em;
 }
 
 /* =================== Section Symptomes =============== */
@@ -433,23 +425,12 @@ footer li i {
     text-align: center;
 }
 
-.bg-blue {
-    background-color: #1565C0;
-}
-
-.bg-orange {
-    background-color: #ff6e08;
-}
 .blue {
     color: #1565C0;
 }
 
 .red {
     color: #c0170c;
-}
-
-.green {
-    color: #49c958;
 }
 .bold {
     font-weight: bold;

@@ -49,19 +49,19 @@
             <input type="hidden" name="statut" value="BROUILLON">
             <div class="bloc">
                 <label for="pubAuteur">Auteur</label>
-                <input type="text" name="auteur" id="pubAuteur">
+                <input type="text" name="auteur" id="pubAuteur" placeholder="Renseignez votre nom (Ex: Jean SAGUE)" required>
             </div>
             <div class="bloc">
                 <label for="pubTitre">Titre *</label>
-                <input type="text" name="titre" id="pubTitre" required>
+                <input type="text" name="titre" id="pubTitre" placeholder="Donnez un titre à votre publication" required>
             </div>
             <div class="bloc">
                 <label for="pubImage">Image *</label>
-                <input type="url" name="image" id="pubImage" required>
+                <input type="url" name="image" id="pubImage" placeholder="Renseignez l'adresse du lien de l'image" required>
             </div>
             <div class="bloc">
                 <label for="pubDescription">Description *</label>
-                <textarea name="description" id="pubDescription" cols="30" rows="10" required></textarea>
+                <textarea name="description" id="pubDescription" cols="30" rows="10" placeholder="Veuillez décrire en quelques mots le contenu de votre publication..."required></textarea>
             </div>
             <div class="bloc">
                 <fieldset>
@@ -80,7 +80,7 @@
             <div class="bloc">
                 <div class="pubContent" id="contentTypeTexte">
                     <label for="pubContentTexte">Contenu</label>
-                    <textarea id="pubContentTexte" cols="30" rows="10"></textarea>
+                    <textarea id="pubContentTexte" cols="30" rows="10" placeholder="Veuillez décrire en quelques mots le contenu de votre type de publication..."required></textarea>
                 </div>
 
                 <div class="pubContent hide" id="contentTypeImage">
@@ -115,7 +115,7 @@
                     <label for="pubSourceNom">Nom de la source *</label>
                     <input type="text" name="sourceNom" id="pubSourceNom" placeholder="Ex: Gabon Media Time" required>
                     <label for="pubSourceURL">URL de la source *</label>
-                    <input type="url" name="sourceLien" id="pubSourceURL" required>
+                    <input type="url" name="sourceLien" id="pubSourceURL" placeholder="Renseignez le lien de votre source" required>
                 </fieldset>
     
             </div>
