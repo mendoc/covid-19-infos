@@ -86,6 +86,7 @@ function addPub(data, section = 'home') {
                 <p data-url="${data.sourceLien}">${data.description || "Contenu"}</p>
                 <div class="pub-footer">
                     <button class="button"><i class="fa fa-share-alt"></i><span>Partager</span></button>
+                    <button class="button btn-modal"><i class="fa fa-eye" aria-hidden="true"></i></button>
                     <p>Source : <a href="${data.sourceLien}">${data.sourceNom}</a></p>
                 </div>
                 <div class="pub-sharing hide">
@@ -165,6 +166,39 @@ function addClickEvent(el) {
         }
         pubSharing.toggleClass('hide', '');
     });
+}
+
+
+/**
+ * Cette fonction active une fenetre modal de l'element
+ * @param {JQuery.fn.Init} el 
+ */
+function activeModal(el) {
+    el.click(() =>{
+        $('body').css('overflowY','hidden')
+        $('header > a:first-of-type').addClass('hide')
+        $('#btn-close-modal').removeClass('hide')
+        el.parent().parent().parent().toggleClass('modal')
+        el.parent().find('button:first-child').addClass('hide')
+        el.addClass('hide')
+        el.parent().parent().find(".pub-sharing").removeClass('hide')
+        // console.log('Clicked')
+    })
+}
+
+/**
+ * Cette fonction ferme la fenetre modal actuelle
+ * @param {Event} event 
+ */
+function closeModal(event) {
+    let el = $(event.currentTarget)
+    let modalElt = $('.modal')
+    modalElt.removeClass('modal')
+    $('body').css('overflowY','auto')
+    $('header > a:first-of-type').removeClass('hide')
+    $('.pub-footer button').removeClass('hide')
+    $('.pub-sharing').addClass('hide')
+    el.addClass('hide')
 }
 
 const copyToClipboard = str => {
