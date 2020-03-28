@@ -59,15 +59,16 @@ function loader(rubrique, show = true) {
 
 /**
  * Ajoute une publication dans une section
- * @param {string} data
+ * @param pub
  * @param {string} section
  * @return void
  */
-function addPub(data, section = 'home') {
+function addPub(pub, section = 'home') {
+    let data = pub.data();
     let d = moment(data.pubDate).format("dddd, Do MMMM YYYY [à] HH:mm");
-    let item = `<div class="publication">
-            <h1 class="title" data-url="${data.sourceLien}">${data.titre}</h1>
-            <div class="image" data-url="${data.sourceLien}">
+    let item = `<div class="publication" id="${pub.id}">
+            <h1 class="title" data-pub="${pub.id}">${data.titre}</h1>
+            <div class="image" data-pub="${pub.id}">
                 <img src="${data.image}" alt="Image de ${data.titre}">
             </div>
             <div class="content">
@@ -75,10 +76,10 @@ function addPub(data, section = 'home') {
                     <i class="fa fa-clock-o"></i>
                     <time datetime="2020-03-16"> publié le ${d}</time>
                 </div>
-                <p data-url="${data.sourceLien}">${data.description || "Contenu"}</p>
+                <p class="description" data-pub="${pub.id}">${data.description || "Description"}</p>
+                <p class="contenu hide" data-pub="${pub.id}">${data.contenu || "Contenu"}</p>
                 <div class="pub-footer">
                     <button class="button"><i class="fa fa-share-alt"></i><span>Partager</span></button>
-                    <button class="button btn-modal"><i class="fa fa-eye" aria-hidden="true"></i></button>
                     <p>Source : <a href="${data.sourceLien}">${data.sourceNom}</a></p>
                 </div>
                 <div class="pub-sharing hide">
@@ -98,8 +99,7 @@ function addClickEvent(el) {
         if (pubSharing.hasClass('hide')) {
             el.find('i').prop('class', 'fa fa-remove');
             el.find('span').text('Annuler');
-        }
-        else {
+        } else {
             el.find('i').prop('class', 'fa fa-share-alt');
             el.find('span').text('Partager');
         }
@@ -110,34 +110,34 @@ function addClickEvent(el) {
 
 /**
  * Cette fonction active une fenetre modal de l'element
- * @param {JQuery.fn.Init} el 
+ * @param pub_id
  */
-function activeModal(el) {
-    el.click(() =>{
-        $('body').css('overflowY','hidden')
-        $('header > a:first-of-type').addClass('hide')
-        $('#btn-close-modal').removeClass('hide')
-        el.parent().parent().parent().toggleClass('modal')
-        el.parent().find('button:first-child').addClass('hide')
-        el.addClass('hide')
-        el.parent().parent().find(".pub-sharing").removeClass('hide')
-        // console.log('Clicked')
-    })
+function activeModal(pub_id) {
+    let el = $(`#${pub_id}`);
+    $('body').css('overflowY', 'hidden');
+    $('header > a:first-of-type').addClass('hide');
+    $('#btn-close-modal').removeClass('hide');
+    el.addClass('modal');
+    el.find('button:first-child').addClass('hide');
+    el.find('p.contenu').removeClass('hide');
+    el.find('button.btn-modal').addClass('hide');
+    el.find(".pub-sharing").removeClass('hide');
 }
 
 /**
  * Cette fonction ferme la fenetre modal actuelle
- * @param {Event} event 
+ * @param {Event} event
  */
 function closeModal(event) {
-    let el = $(event.currentTarget)
-    let modalElt = $('.modal')
-    modalElt.removeClass('modal')
-    $('body').css('overflowY','auto')
-    $('header > a:first-of-type').removeClass('hide')
-    $('.pub-footer button').removeClass('hide')
-    $('.pub-sharing').addClass('hide')
-    el.addClass('hide')
+    let el = $(event.currentTarget);
+    let modalElt = $('.modal');
+    modalElt.removeClass('modal');
+    $('body').css('overflowY', 'auto');
+    $('header > a:first-of-type').removeClass('hide');
+    $('.pub-footer button').removeClass('hide');
+    $('.pub-sharing').addClass('hide');
+    el.parent().parent().find('p.contenu').addClass('hide');
+    el.addClass('hide');
 }
 
 const copyToClipboard = str => {

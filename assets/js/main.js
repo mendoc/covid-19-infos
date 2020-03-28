@@ -36,14 +36,14 @@ $(document).ready(function () {
 
         $("#home .body").empty();
         pubs.forEach((doc) => {
-            addPub(doc.data(), "home");
+            addPub(doc, "home");
         });
 
         // Gestion du clic sur les publications
         let elPubs = $('#home .title, #home .image, #home .content > p');
         elPubs.each(function () {
             $(this).click(function () {
-                location.href = $(this).data('url');
+                activeModal($(this).data('pub'));
             });
         });
 
@@ -57,13 +57,13 @@ $(document).ready(function () {
 
         // Gestion de la fenetre modal
 
-        let btnActiveModalElts = $('#home .content .btn-modal')
+        let btnActiveModalElts = $('#home .content .btn-modal');
 
         btnActiveModalElts.each(function(){
-            activeModal($(this))
-        })
+            //activeModal($(this))
+        });
 
-        let btnCloseModal = $('#btn-close-modal')
+        let btnCloseModal = $('#btn-close-modal');
         btnCloseModal.click(closeModal)
     });
 });
