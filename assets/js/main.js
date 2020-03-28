@@ -1,21 +1,6 @@
 $(document).ready(function () {
     moment.locale('fr_FR');
 
-    // On vérifie si on a déjà demandé la permission a l'utilisateur
-    let neverAsked = getNotificationPermissionAsked();
-
-    // On affiche les boutons de notification s'il n'a pas encore reçu de demande de permission
-    if (neverAsked) {
-        let notifButtons = $(".button-notif, .text-notif");
-        notifButtons.removeClass("hide");
-        notifButtons.click(function () {
-            Notification.requestPermission(function (status) {
-                let n = new Notification("COVID-19 Infos", {body: "Vous recevrez des notifications lorsqu'un contenu sera publié"});
-                if (status === 'granted' || status === 'denied') notifButtons.addClass("hide");
-            });
-        });
-    }
-
     // Gestion du passage d'une rubrique à une autre
     let itemsFooter = $("footer li");
     itemsFooter.click(function () {
@@ -34,8 +19,14 @@ $(document).ready(function () {
             let data = stat.data();
             $('#contaminations').text(data.contaminations);
             $('#deces').text(data.deces);
+            $('#gueris').text(data.gueris);
+            $('#g-confirmes').text(data.g_confirmes);
+            $('#g-deces').text(data.g_deces);
+            $('#g-touches').text(data.g_touches);
             let d = moment(data.updateTime).format("dddd, Do MMMM YYYY");
+            let gd = moment(data.g_updateTime).format("dddd, Do MMMM YYYY");
             $('#updateTime').text(`Mis à jour le ${d}`);
+            $('#g-updateTime').text(`Mis à jour le ${gd}`);
         });
     });
 
@@ -45,24 +36,25 @@ $(document).ready(function () {
 
         $("#home .body").empty();
         pubs.forEach((doc) => {
-            addPub(doc.data(), "home");
+            addPub(doc, "home");
         });
 
-        // Gestion du clic sur les publication
+        // Gestion du clic sur les publications
         let elPubs = $('#home .title, #home .image, #home .content > p');
         elPubs.each(function () {
             $(this).click(function () {
-                location.href = $(this).data('url');
+                activeModal($(this).data('pub'));
             });
         });
 
         // Gestion du clic sur le bouton de partage
-        let btns = $('#home .content button');
+        let btns = $('#home .content button:first-child');
         btns.each(function () {
             addClickEvent($(this));
         });
         showBody("home");
         loader("home", false);
+
     });
     const bgDarkStyle = 'darkbg'
     const textWhiteStyle = 'text-white'
@@ -78,8 +70,9 @@ $(document).ready(function () {
         $("footer").toggleClass(`${bgDarkStyle} ${textWhiteStyle}`)
     })
 
-    // Récuperation des flux rss
-    const RSS_URL = `https://www.mediapart.fr/articles/feed`;
-    getCovidRSS(RSS_URL);
+  
 
+        let btnCloseModal = $('#btn-close-modal');
+        btnCloseModal.click(closeModal)
+    });
 });

@@ -34,14 +34,6 @@ function write(path, value, success, error) {
         });
 }
 
-function getKey() {
-    return firebase.database().ref().push().key;
-}
-
-function getNotificationPermissionAsked() {
-    return (window.Notification && Notification.permission !== "granted" && Notification.permission !== "denied");
-}
-
 function showBody(selector) {
     $(`#${selector} .body`).css("display", "block");
 }
@@ -67,15 +59,16 @@ function loader(rubrique, show = true) {
 
 /**
  * Ajoute une publication dans une section
- * @param {string} data
+ * @param pub
  * @param {string} section
  * @return void
  */
-function addPub(data, section = 'home') {
+function addPub(pub, section = 'home') {
+    let data = pub.data();
     let d = moment(data.pubDate).format("dddd, Do MMMM YYYY [à] HH:mm");
-    let item = `<div class="publication">
-            <h1 class="title" data-url="${data.sourceLien}">${data.titre}</h1>
-            <div class="image" data-url="${data.sourceLien}">
+    let item = `<div class="publication" id="${pub.id}">
+            <h1 class="title" data-pub="${pub.id}">${data.titre}</h1>
+            <div class="image" data-pub="${pub.id}">
                 <img src="${data.image}" alt="Image de ${data.titre}">
             </div>
             <div class="content">
@@ -83,7 +76,8 @@ function addPub(data, section = 'home') {
                     <i class="fa fa-clock-o"></i>
                     <time datetime="2020-03-16"> publié le ${d}</time>
                 </div>
-                <p data-url="${data.sourceLien}">${data.description || "Contenu"}</p>
+                <p class="description" data-pub="${pub.id}">${data.description || "Description"}</p>
+                <p class="contenu hide" data-pub="${pub.id}">${data.contenu || "Contenu"}</p>
                 <div class="pub-footer">
                     <button class="button"><i class="fa fa-share-alt"></i><span>Partager</span></button>
                     <p>Source : <a href="${data.sourceLien}">${data.sourceNom}</a></p>
@@ -98,59 +92,6 @@ function addPub(data, section = 'home') {
     $(`#${section} .body`).append(item);
 }
 
-
-/**
- * Place une information provenant d'une url dans l'acceuil
- * @param {string} RSS_URL
- */
-function getCovidRSS(RSS_URL) {
-
-    const covidRegex = /(covid-19|coronavirus)/gmi;
-
-    $.ajax(RSS_URL, {
-        accepts: {
-            xml: "application/rss+xml"
-        },
-        dataType: "xml",
-        success: function (data) {
-            // On retient le nom de la source
-            const source = $(data).find("channel").find("title").get()[0].textContent;
-
-            $(data)
-                .find("item")
-                .each(function () {
-                    const el = $(this);
-                    const title = el.find("title").text();
-                    const description = el.find("description").text();
-                    const subjectCovidTabs = [...title.matchAll(covidRegex), ...description.matchAll(covidRegex)];
-
-                    if (subjectCovidTabs && subjectCovidTabs.length > 0) {
-
-                        const imageUrl = el.get()[0].querySelector('content') ? el.get()[0].querySelector('content').getAttribute('url') : `https://fcw.com/-/media/GIG/EDIT_SHARED/Health-IT/covid19.jpg`;
-                        const date = new Date(el.find("pubDate").text());
-
-                        const params = {
-                            titre: title,
-                            image: imageUrl,
-                            pubDate: date,
-                            description: description,
-                            sourceNom: source,
-                            sourceLien: el.find("link").text()
-                        };
-                        addPub(params, "ailleurs");
-                    }
-                });
-            // Gestion du clic sur le bouton de partage
-            let btns = $('#ailleurs .content button');
-            btns.each(function () {
-                addClickEvent($(this));
-            });
-            loader("ailleurs", false);
-            showBody("ailleurs");
-        }
-    })
-}
-
 function addClickEvent(el) {
     $(el).click(function () {
         el.toggleClass('button button-cancel');
@@ -158,13 +99,45 @@ function addClickEvent(el) {
         if (pubSharing.hasClass('hide')) {
             el.find('i').prop('class', 'fa fa-remove');
             el.find('span').text('Annuler');
-        }
-        else {
+        } else {
             el.find('i').prop('class', 'fa fa-share-alt');
             el.find('span').text('Partager');
         }
         pubSharing.toggleClass('hide', '');
     });
+}
+
+
+/**
+ * Cette fonction active une fenetre modal de l'element
+ * @param pub_id
+ */
+function activeModal(pub_id) {
+    let el = $(`#${pub_id}`);
+    $('body').css('overflowY', 'hidden');
+    $('header > a:first-of-type').addClass('hide');
+    $('#btn-close-modal').removeClass('hide');
+    el.addClass('modal');
+    el.find('button:first-child').addClass('hide');
+    el.find('p.contenu').removeClass('hide');
+    el.find('button.btn-modal').addClass('hide');
+    el.find(".pub-sharing").removeClass('hide');
+}
+
+/**
+ * Cette fonction ferme la fenetre modal actuelle
+ * @param {Event} event
+ */
+function closeModal(event) {
+    let el = $(event.currentTarget);
+    let modalElt = $('.modal');
+    modalElt.removeClass('modal');
+    $('body').css('overflowY', 'auto');
+    $('header > a:first-of-type').removeClass('hide');
+    $('.pub-footer button').removeClass('hide');
+    $('.pub-sharing').addClass('hide');
+    el.parent().parent().find('p.contenu').addClass('hide');
+    el.addClass('hide');
 }
 
 const copyToClipboard = str => {
