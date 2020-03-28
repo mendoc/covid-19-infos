@@ -153,6 +153,43 @@ section > p.actu-title {
     font-size: 1.5em;
 }
 
+/* ================= Section Prevention ================== */
+.prevention h1{
+    text-align: center;
+}
+.video-controls{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #1565C0;
+    padding: .5em 0;
+}
+
+.video-controls > div:not(:last-child){
+    color: #ffffff;
+    font-size: 1.1em;
+    transition: transform .5s;
+}
+
+.video-controls > div:not(:last-child):active{
+    transform: scale(0.8);
+}
+
+.timeline{
+    flex-basis: 60%;
+    height: 5px;
+    background-color: #b1afaf71;
+}
+
+.timeline-bar{
+    height: 100%;
+    /* width: 80%; */
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform .1s;
+    background-color: #ffffff;
+}
+
 /* =================== Section Symptomes =============== */
 
 .remark {

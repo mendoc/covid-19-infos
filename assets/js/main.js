@@ -55,15 +55,40 @@ $(document).ready(function () {
         showBody("home");
         loader("home", false);
 
-        // Gestion de la fenetre modal
-
-        let btnActiveModalElts = $('#home .content .btn-modal');
-
-        btnActiveModalElts.each(function(){
-            //activeModal($(this))
-        });
-
         let btnCloseModal = $('#btn-close-modal');
         btnCloseModal.click(closeModal)
+
+        // Gestion de la video
+        let video = $('.video-tag video').get(0)
+        $('.btn-control').click(function() {
+            switch (this.id) {
+                case 'btn-play':
+                    let btnPlayIcon = $(this).find("i")
+                    btnPlayIcon.toggleClass('fa-play-circle-o').toggleClass('fa-pause-circle-o')
+                    if (video.paused) {
+                        video.play()
+                    } else {
+                        video.pause()
+                    }
+                    break;
+                case 'btn-volume':
+                    let btnVolumeIcon = $(this).find("i")
+                    btnVolumeIcon.toggleClass('fa-volume-up').toggleClass('fa-volume-off')
+                    video.volume = video.volume === 0 ? 1 : 0
+                    console.log(video.volume)
+                    break;
+                case 'btn-reload':
+                    video.currentTime = 0
+                    break
+            }
+        })
+
+        $('.duration-end').text(Math.floor(video.duration/60))
+        const timelineElt = $('.timeline-bar')
+        video.addEventListener('timeupdate',function(){
+            let percent = video.currentTime / video.duration
+            timelineElt.css({"transform":`scaleX(${percent})`})
+        })
+        
     });
 });
