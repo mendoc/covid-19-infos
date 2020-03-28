@@ -48,11 +48,22 @@ $(document).ready(function () {
         });
 
         // Gestion du clic sur le bouton de partage
-        let btns = $('#home .content button');
+        let btns = $('#home .content button:first-child');
         btns.each(function () {
             addClickEvent($(this));
         });
         showBody("home");
         loader("home", false);
+
+        // Gestion de la fenetre modal
+
+        let btnActiveModalElts = $('#home .content .btn-modal')
+
+        btnActiveModalElts.each(function(){
+            activeModal($(this))
+        })
+
+        let btnCloseModal = $('#btn-close-modal')
+        btnCloseModal.click(closeModal)
     });
 });
