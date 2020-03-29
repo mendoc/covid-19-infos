@@ -73,6 +73,66 @@
     </div>
 </nav>
 <div class="container-fluid mt-4">
+    <div class="row d-lg-none">
+        <div class="col-12 mt-3 mb-5">
+            <h4 class="text-center">Statistiques</h4>
+            <ul class="nav nav-pills mb-3" id="pills-tab-top" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="pills-home-tab-top" data-toggle="pill" href="#pills-gabon-top" role="tab"
+                       aria-controls="pills-home" aria-selected="true">Au Gabon</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-profile-tab-top" data-toggle="pill" href="#pills-monde-top" role="tab"
+                       aria-controls="pills-profile" aria-selected="false">Dans le Monde</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent-top">
+                <div class="tab-pane fade show active" id="pills-gabon-top" role="tabpanel"
+                     aria-labelledby="pills-home-tab">
+                    <table class="table table-bordered">
+                        <thead class=" text-center">
+                        <tr>
+                            <th scope="col">Infectés</th>
+                            <th scope="col">Morts</th>
+                            <th scope="col">Guéris</th>
+                        </tr>
+                        </thead>
+                        <tbody class="">
+                        <tr class="text-center text-bold">
+                            <td class="text-warning">7</td>
+                            <td class="text-danger">1</td>
+                            <td class="text-success">0</td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                    <p class="font-italic text-center">Mise à jour le dimanche 29 mars 2020 <br> Source : Organisation
+                        Mondiale de la Santé</p>
+                </div>
+                <div class="tab-pane fade" id="pills-monde-top" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    <table class="table table-bordered">
+                        <thead class=" text-center">
+                        <tr>
+                            <th scope="col">Infectés</th>
+                            <th scope="col">Morts</th>
+                            <th scope="col">Guéris</th>
+                        </tr>
+                        </thead>
+                        <tbody class="">
+                        <tr class="text-center text-bold">
+                            <td class="text-warning">616.742</td>
+                            <td class="text-danger">29.532</td>
+                            <td class="text-success">203</td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                    <p class="font-italic text-center">Mise à jour le dimanche 29 mars 2020 <br> Source : Organisation
+                        Mondiale de la Santé</p>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="row">
         <div class="col-lg-8 col-12">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -184,8 +244,8 @@
             </div>
         </div>
         <div class="col-lg-3 offset-lg-1 col-12">
-            <h4 class="text-center mt-5">Statistiques</h4>
-            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <h4 class="text-center mt-5 d-none d-lg-block">Statistiques</h4>
+            <ul class="nav nav-pills mb-3 d-none d-lg-block" id="pills-tab" role="tablist">
                 <li class="nav-item">
                     <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-gabon" role="tab"
                        aria-controls="pills-home" aria-selected="true">Au Gabon</a>
@@ -195,7 +255,7 @@
                        aria-controls="pills-profile" aria-selected="false">Dans le Monde</a>
                 </li>
             </ul>
-            <div class="tab-content" id="pills-tabContent">
+            <div class="tab-content d-none d-lg-block" id="pills-tabContent">
                 <div class="tab-pane fade show active" id="pills-gabon" role="tabpanel"
                      aria-labelledby="pills-home-tab">
                     <table class="table table-bordered">
