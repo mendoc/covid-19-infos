@@ -1,6 +1,6 @@
 (function () {
     db.collection('publications').orderBy('pubDate', 'desc')
-        .onSnapshot(function (pubs) {
+        .get(function (pubs) {
             let body = document.getElementById('pub-body');
             body.innerHTML = '';
             pubs.forEach(function (doc) {
