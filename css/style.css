@@ -1,78 +1,93 @@
-.text-contaminée{
-	color:orange;
+.text-contaminée {
+    color: orange;
 }
-.text-decès{
-	color:red;
+
+.text-decès {
+    color: red;
 }
-.div-sticky{
-	height: 700px;
-	width: 100%;
-	background-color: blue;
+
+.div-sticky {
+    height: 700px;
+    width: 100%;
+    background-color: blue;
 }
-.chiffres{
-	font-size: 35px;
-	font-weight: normal;
+
+.chiffres {
+    font-size: 35px;
+    font-weight: normal;
 
 }
-.bold-1{
-	font-weight: bold;
-	font-size: 20px;
+
+.bold-1 {
+    font-weight: bold;
+    font-size: 20px;
 }
-.side-bar{
-	height: 700px;
-	width: 100%;
+
+.side-bar {
+    height: 700px;
+    width: 100%;
 
 }
-.img1{
-	background-image: url(../img/image2.jpg);
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	height: 230px;
-	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-	border:0px;
+
+.img1 {
+    background-image: url(../img/image2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 230px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    border: 0px;
 }
-.img2{
-	background-image: url(../img/image7.jpg);
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	height: 230px;
-	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-	border:0px;
+
+.img2 {
+    background-image: url(../img/image7.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 230px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    border: 0px;
 }
-.img3{
-	background-image: url(../img/image14.jpg);
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	height: 230px;
-	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-	border:0px;
+
+.img3 {
+    background-image: url(../img/image14.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 230px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    border: 0px;
 }
-.img4{
-	background-image: url(../img/image12.jpg);
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	height: 230px;
-	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-	border:0px;
+
+.img4 {
+    background-image: url(../img/image12.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 230px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    border: 0;
 }
-.titre{
-	background-color: rgba(32,99,143,.8);
-	margin-top: 48%;
-	color: white;
-	font-size: 20px;
-	padding: 8px;
-	border-bottom-right-radius: 5px;
-	border-bottom-left-radius: 5px;
-	
+
+.titre {
+    background-color: rgba(32, 99, 143, .8);
+    margin-top: 48%;
+    color: white;
+    font-size: 20px;
+    padding: 8px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+
 }
 
 .border {
-	border: 1px solid lightgray;
+    border: 1px solid lightgray;
 }
-.a-hover:hover{
-	text-decoration: none;
+
+.a-hover:hover {
+    text-decoration: none;
+}
+
+.nav-tabs .nav-link {
+    font-size: 0.7em;
 }
