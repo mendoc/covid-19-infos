@@ -1,0 +1,16 @@
+.snip1518 figcaption {
+    padding: 0;
+}
+.snip1518 img {
+    height: 125px;
+}
+
+.box-img > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.box-content {
+    text-align: center;
+}
