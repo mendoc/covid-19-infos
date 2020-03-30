@@ -5,18 +5,26 @@
         .then(function (querySnapshot) {
             let body = document.getElementById('pubs-body');
             let videos = document.getElementById('videos-body');
+            let fake = document.getElementById('fake-body');
             body.innerHTML = '';
             videos.innerHTML = '';
+            fake.innerHTML = '';
             querySnapshot.forEach(function (doc) {
                 let pub = doc.data();
                 let jour = moment(pub.pubDate).format("Do");
                 let mois = moment(pub.pubDate).format("MMMM");
                 let heure = moment(pub.pubDate).format("HH:mm");
-                let item = '<div class="col mb-4"> <div class="card"> <figure class="snip1253"> <div class="image"><img src="' + pub.image + '" alt="sample52"/></div> <figcaption> <div class="date"><span class="day">'+jour+'</span><span class="month">'+mois+'</span><span style="font-size: 0.6em;" class="day">'+heure+'</span></div> <h3>' + pub.titre + '</h3> <p class="mt-2">' + pub.description + '</p> </figcaption> <footer> <a class="font-italic" href="' + pub.sourceLien + '">Source : ' + pub.sourceNom + '</a></footer></figure></div></div>';
+                let item = '<div class="col mb-4"><div class="card"><figure class="snip1253"><div class="image"><img src="' + pub.image + '" alt="sample52"/></div><figcaption><div class="date"><span class="day">' + jour + '</span><span class="month">' + mois + '</span><span style="font-size: 0.6em;" class="day">' + heure + '</span></div><h3>' + pub.titre + '</h3><p class="mt-2">' + pub.description + '</p></figcaption><footer><a class="font-italic" href="' + pub.sourceLien + '">Source : ' + pub.sourceNom + '</a></footer></figure></div></div>';
                 if (pub.type === 'VIDEO')
                     videos.innerHTML += item;
-                else
-                    body.innerHTML += item;
+                else {
+                    if (pub.important === 'FAKE') {
+                        item = '<div><figure class="snip1171 mb-4"><img src="' + pub.image + '" alt="' + pub.titre + '"/><figcaption><p>' + pub.description + '</p><p>' + pub.contenu + '</p><a href="#">Fake News</a></figcaption></figure></div>';
+                        fake.innerHTML += item;
+                    } else {
+                        body.innerHTML += item;
+                    }
+                }
             });
         })
         .catch(function (error) {
