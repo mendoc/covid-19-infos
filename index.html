@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="css/style.css">
 
     <link rel="alternate" hreflang="fr-fr" href="https://covid-19-infos.netlify.com/index.html"/>
+    <link rel="manifest" href="manifest.json">
 
     <meta name=author content="Ecole 241">
     <meta name=description
@@ -34,6 +35,9 @@
     <meta name=og:site_name content="COVID-19 Infos">
     <meta name=og:description
           content="COVID-19 Infos est un système de notifications permettant de suivre l'évolution du coronavirus au Gabon.">
+    
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#ff0000"/>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161415127-1"></script>
@@ -46,6 +50,10 @@
 
         gtag('js', new Date());
         gtag('config', 'UA-161415127-1');
+
+          if('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('sw.js');
+        };
     </script>
 </head>
 <body>

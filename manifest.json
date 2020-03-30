@@ -1,0 +1,15 @@
+{
+    "short_name": "COVID-19 Infos",
+    "name": "COVID-19 Infos",
+    "icon": [
+      {
+        "src": "/assets/img/logo_temp.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+    ],
+    "start_url": "/index.html",
+    "background_color": "#000000",
+    "display": "standalone",
+    "theme_color": "#0000ff"
+  }
