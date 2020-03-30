@@ -32,8 +32,9 @@ body {
 }
 
 
-/*cards*/
-figure.snip1253 {
+/* ================ Style Article ==================*/
+
+figure.article {
     color: #fff;
     position: relative;
     overflow: hidden;
@@ -46,32 +47,32 @@ figure.snip1253 {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 }
 
-figure.snip1253 * {
+figure.article * {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
 
-figure.snip1253 .image {
+figure.article .image {
     max-height: 220px;
     overflow: hidden;
 }
 
-figure.snip1253 img {
+figure.article img {
     max-width: 100%;
     vertical-align: top;
     position: relative;
 }
 
-figure.snip1253 figcaption {
+figure.article figcaption {
     margin: -40px 15px 0;
     padding: 15px;
     position: relative;
     background-color: #ffffff;
 }
 
-figure.snip1253 .date {
+figure.article .date {
     background-color: #2980b9;
     top: 15px;
     color: #fff;
@@ -85,23 +86,23 @@ figure.snip1253 .date {
     text-transform: uppercase;
 }
 
-figure.snip1253 .date span {
+figure.article .date span {
     display: block;
     line-height: 24px;
 }
 
-figure.snip1253 .date .month {
+figure.article .date .month {
     font-size: 14px;
     background-color: rgba(0, 0, 0, 0.1);
 }
 
-figure.snip1253 h3,
-figure.snip1253 p {
+figure.article h3,
+figure.article p {
     margin: 0;
     padding: 0;
 }
 
-figure.snip1253 h3 {
+figure.article h3 {
     min-height: 50px;
     margin-bottom: 10px;
     margin-left: 60px;
@@ -111,13 +112,13 @@ figure.snip1253 h3 {
     font-size: 15px;
 }
 
-figure.snip1253 p {
+figure.article p {
     font-size: 0.8em;
     margin-bottom: 20px;
     line-height: 1.6em;
 }
 
-figure.snip1253 footer {
+figure.article footer {
     padding: 0 25px;
     background-color: #20638f;
     color: #e6e6e6;
@@ -126,17 +127,17 @@ figure.snip1253 footer {
     text-align: right;
 }
 
-figure.snip1253 footer > div {
+figure.article footer > div {
     display: inline-block;
     margin-left: 10px;
 }
 
-figure.snip1253 footer i {
+figure.article footer i {
     color: rgb(255, 255, 255);
     margin-right: 5px;
 }
 
-figure.snip1253 a {
+figure.article a {
     left: 0;
     right: 0;
     top: 0;
@@ -146,11 +147,17 @@ figure.snip1253 a {
     color: #fff;
 }
 
-figure.snip1253:hover img,
-figure.snip1253.hover img {
-    -webkit-transform: scale(1.15);
-    transform: scale(1.15);
+.article-header{
+    background-size: cover;
+    background-repeat: no-repeat;
 }
+
+.article-header > button{
+    outline: none;
+    border: none;
+}
+
+/* -------------------------------------------- */
 
 .card {
     border: none;

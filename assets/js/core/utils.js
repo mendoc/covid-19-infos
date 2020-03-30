@@ -60,32 +60,31 @@ function loader(rubrique, show = true) {
 
 /**
  * Ajoute une publication dans une section
- * @param pub
+ * @param {Object}pub
  * @param {string} section
- * @return void
+ * @return {string} - retourne une publication
  */
-function addPub(pub, section = 'nav-home') {
-    let data = pub.data();
-    let jour = moment(data.pubDate).get('date');
-    let mois = moment(data.pubDate).format("MMM");
+function addPub({image , description, pubDate , sourceLien , sourceNom , titre}) {
+    let jour = moment(pubDate).get('date');
+    let mois = moment(pubDate).format("MMM");
     let item = `<div class="col mb-4">
                 <div class="card">
-                    <figure class="snip1253">
-                        <div class="image"><img src="${data.image}" alt="${data.titre}"/></div>
+                    <figure class="article">
+                        <div class="image"><img src="${image}" alt="${titre}"/></div>
                         <figcaption>
                             <div class="date">
                                 <span class="day">${jour}</span><span class="month">${mois}</span>
                             </div>
-                            <h3>${data.titre}</h3>
-                            <p>${data.description}</p>
+                            <h3>${titre}</h3>
+                            <p>${description}</p>
                         </figcaption>
                         <footer>
-                            <a class="font-italic" href="${data.sourceLien}">Source : ${data.sourceNom}</a>
+                            <a class="font-italic" href="${sourceLien}">Source : ${sourceNom}</a>
                         </footer>
                     </figure>
                 </div>
             </div>`;
-    $(`#${section} .body`).append(item);
+    return item
 }
 
 function addClickEvent(el) {
