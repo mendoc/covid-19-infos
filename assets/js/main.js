@@ -30,4 +30,34 @@
         .catch(function (error) {
             console.log("Error getting documents: ", error);
         });
+
+    // Recuperation des statistiques
+    db.collection("statistiques")
+        .get()
+        .then(function (querySnapshot) {
+            querySnapshot.forEach(function (doc) {
+                let stats = doc.data();
+                let contaminations = document.querySelectorAll('.contaminations');
+                let gConfrimes = document.querySelectorAll('.g_confirmes');
+                let deces = document.querySelectorAll('.deces');
+                let gDeces = document.querySelectorAll('.g_deces');
+                let gueris = document.querySelectorAll('.gueris');
+                let touches = document.querySelectorAll('.g_touches');
+                contaminations[0].textContent = stats.contaminations;
+                contaminations[1].textContent = stats.contaminations;
+                gConfrimes[0].textContent = stats.g_confirmes;
+                gConfrimes[1].textContent = stats.g_confirmes;
+                deces[0].textContent = stats.deces;
+                deces[1].textContent = stats.deces;
+                gDeces[0].textContent = stats.g_deces;
+                gDeces[1].textContent = stats.g_deces;
+                gueris[0].textContent = stats.gueris;
+                gueris[1].textContent = stats.gueris;
+                touches[0].textContent = stats.g_touches;
+                touches[1].textContent = stats.g_touches;
+            });
+        })
+        .catch(function (error) {
+            console.log("Error getting documents: ", error);
+        });
 })();

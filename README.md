@@ -3,5 +3,11 @@
 
 Système de notifications pour tenir le public informé par rapport à l'actualité du coronavirus
 
+## Site
+Le site est disponible à l'adresse suivante : 
+
+[https://covid-19-infos.netlify.com](https://covid-19-infos.netlify.com)
+
+
 ## Contribution
 Vous souhaitez apporter une modification ou faire une proposition ? Prière de suivre les directives qui sont données dans le fichier [CONTRIBUTING.md](CONTRIBUTING.md) 
