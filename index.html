@@ -1,39 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>COVID-19 Infos | Symptômes</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#1565C0">
-    <link rel="icon" href="assets/img/logo_temp.png" type="image/png"/>
+    <link rel="icon" href="assets/img/logo_temp.png" type="image/png" />
 
     <link rel="stylesheet" href="assets/css/lib/font-awesome/css/font-awesome.min.css">
 
     <!-- cdn -->
     <!-- bootstrap -->
     <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" rel="stylesheet">
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" rel="stylesheet">
     <!-- vidéos js -->
-    <link href="https://vjs.zencdn.net/7.7.5/video-js.css" rel="stylesheet"/>
+    <link href="https://vjs.zencdn.net/7.7.5/video-js.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/style.css">
 
-    <link rel="alternate" hreflang="fr-fr" href="https://covid-19-infos.netlify.com/index.html"/>
+    <link rel="alternate" hreflang="fr-fr" href="https://covid-19-infos.netlify.com/index.html" />
 
     <meta name=author content="Ecole 241">
     <meta name=description
-          content="COVID-19 Infos est un système de notifications permettant de suivre l'évolution du coronavirus au Gabon.">
+        content="COVID-19 Infos est un système de notifications permettant de suivre l'évolution du coronavirus au Gabon.">
     <meta name=keywords
-          content="COVID-19, COVID-19 Infos, Coronavirus, Coronavirus Gabon, Ecole 241, OkaCode, Infos coronavirus, Alert coronavirus, en direct coronavirus, covid19, gabon actualité covid19, gabon recommandation mesures covid19">
+        content="COVID-19, COVID-19 Infos, Coronavirus, Coronavirus Gabon, Ecole 241, OkaCode, Infos coronavirus, Alert coronavirus, en direct coronavirus, covid19, gabon actualité covid19, gabon recommandation mesures covid19">
 
     <meta name=og:title content="COVID-19 Infos">
     <meta name=og:type content="website">
-    <meta name=og:image content="https://covid-19-infos.netlify.com/assets/img/logo_temp.png"/>
-    <meta name=og:url content="https://covid-19-infos.netlify.com"/>
+    <meta name=og:image content="https://covid-19-infos.netlify.com/assets/img/logo_temp.png" />
+    <meta name=og:url content="https://covid-19-infos.netlify.com" />
     <meta name=og:site_name content="COVID-19 Infos">
     <meta name=og:description
-          content="COVID-19 Infos est un système de notifications permettant de suivre l'évolution du coronavirus au Gabon.">
+        content="COVID-19 Infos est un système de notifications permettant de suivre l'évolution du coronavirus au Gabon.">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161415127-1"></script>
@@ -47,311 +48,343 @@
         gtag('js', new Date());
         gtag('config', 'UA-161415127-1');
     </script>
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+    <script>
+        var OneSignal = window.OneSignal || [];
+        OneSignal.push(function () {
+            OneSignal.init({
+                appId: "364b4479-f4d5-4d18-ae23-d5033a8fe264",
+            });
+        });
+    </script>
 </head>
+
 <body>
-<nav class="nav-bar sticky-top mb-3 bg-white"><!-- statistiques gabon -->
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xl-3 col-lg-3 col-7 mt-2">
-                <a class="navbar-brand">COVID-19 Infos</a>
-            </div>
-            <div class="col-xl-2 col-lg-2 offset-xl-7 offset-lg-7 col-5 bg-success text-center">
-                <a class="float-right mt-2 mb-2 text-appel" href="tel:1410">Appeler le 1410</a>
+    <nav class="nav-bar sticky-top mb-3 bg-white">
+        <!-- statistiques gabon -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-7 mt-2">
+                    <a class="navbar-brand">COVID-19 Infos</a>
+                </div>
+                <div class="col-xl-2 col-lg-2 offset-xl-7 offset-lg-7 col-5 bg-success text-center">
+                    <a class="float-right mt-2 mb-2 text-appel" href="tel:1410">Appeler le 1410</a>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container-fluid nav-bg">
+        <div class="container-fluid nav-bg">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-12 mt-2 mb-2">
+                    <nav class="nav justify-content-center">
+                        <a class="nav-link" href=".">ACCUEIL</a>
+                        <a class="nav-link" href="symptomes.html">SYMPTÔMES</a>
+                        <a class="nav-link" href="maps.html">CARTES</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid mt-4">
+        <div class="row d-lg-none">
+            <div class="col-12 mt-3 mb-5">
+                <h4 class="text-center">Statistiques</h4>
+                <ul class="nav nav-pills mb-3" id="pills-tab-top" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="pills-home-tab-top" data-toggle="pill" href="#pills-gabon-top"
+                            role="tab" aria-controls="pills-home" aria-selected="true">Au Gabon</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-profile-tab-top" data-toggle="pill" href="#pills-monde-top"
+                            role="tab" aria-controls="pills-profile" aria-selected="false">Dans le Monde</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="pills-tabContent-top">
+                    <div class="tab-pane fade show active" id="pills-gabon-top" role="tabpanel"
+                        aria-labelledby="pills-home-tab">
+                        <table class="table table-bordered">
+                            <thead class=" text-center">
+                                <tr>
+                                    <th scope="col">Infectés</th>
+                                    <th scope="col">Morts</th>
+                                    <th scope="col">Guéris</th>
+                                </tr>
+                            </thead>
+                            <tbody class="">
+                                <tr class="text-center text-bold">
+                                    <td class="text-warning contaminations">-</td>
+                                    <td class="text-danger deces">-</td>
+                                    <td class="text-success gueris">-</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                        <p class="font-italic text-center">Mise à jour le dimanche 29 mars 2020 <br> Source :
+                            Organisation
+                            Mondiale de la Santé</p>
+                    </div>
+                    <div class="tab-pane fade" id="pills-monde-top" role="tabpanel" aria-labelledby="pills-profile-tab">
+                        <table class="table table-bordered">
+                            <thead class=" text-center">
+                                <tr>
+                                    <th scope="col">Infectés</th>
+                                    <th scope="col">Morts</th>
+                                    <th scope="col">Pays touchés</th>
+                                </tr>
+                            </thead>
+                            <tbody class="">
+                                <tr class="text-center text-bold">
+                                    <td class="text-warning g_confirmes">-</td>
+                                    <td class="text-danger g_deces">-</td>
+                                    <td class="text-success g_touches">-</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                        <p class="font-italic text-center g_stats_date">Mise à jour le <span>dimanche 29 mars
+                                2020</span> <br> Source : Organisation
+                            Mondiale de la Santé</p>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="row">
-            <div class="col-xl-12 col-lg-12 col-12 mt-2 mb-2">
-                <nav class="nav justify-content-center">
-                    <a class="nav-link" href=".">ACCUEIL</a>
-                    <a class="nav-link" href="symptomes.html">SYMPTÔMES</a>
-                    <a class="nav-link" href="maps.html">CARTES</a>
+            <div class="col-lg-8 col-12">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="img/img-12.jpg" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Un titre</h5>
+                                <p>Un résumé.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/img-12.jpg" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Un titre</h5>
+                                <p>Un résumé.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+                <nav class="mt-4">
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home"
+                            role="tab" aria-controls="nav-home" aria-selected="true">Articles</a>
+                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile"
+                            role="tab" aria-controls="nav-profile" aria-selected="false">Vidéos</a>
+                        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact"
+                            role="tab" aria-controls="nav-contact" aria-selected="false">Comment faire?</a>
+                    </div>
                 </nav>
-            </div>
-        </div>
-    </div>
-</nav>
-<div class="container-fluid mt-4">
-    <div class="row d-lg-none">
-        <div class="col-12 mt-3 mb-5">
-            <h4 class="text-center">Statistiques</h4>
-            <ul class="nav nav-pills mb-3" id="pills-tab-top" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link active" id="pills-home-tab-top" data-toggle="pill" href="#pills-gabon-top" role="tab"
-                       aria-controls="pills-home" aria-selected="true">Au Gabon</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="pills-profile-tab-top" data-toggle="pill" href="#pills-monde-top" role="tab"
-                       aria-controls="pills-profile" aria-selected="false">Dans le Monde</a>
-                </li>
-            </ul>
-            <div class="tab-content" id="pills-tabContent-top">
-                <div class="tab-pane fade show active" id="pills-gabon-top" role="tabpanel"
-                     aria-labelledby="pills-home-tab">
-                    <table class="table table-bordered">
-                        <thead class=" text-center">
-                        <tr>
-                            <th scope="col">Infectés</th>
-                            <th scope="col">Morts</th>
-                            <th scope="col">Guéris</th>
-                        </tr>
-                        </thead>
-                        <tbody class="">
-                        <tr class="text-center text-bold">
-                            <td class="text-warning contaminations">-</td>
-                            <td class="text-danger deces">-</td>
-                            <td class="text-success gueris">-</td>
-                        </tr>
-
-                        </tbody>
-                    </table>
-                    <p class="font-italic text-center">Mise à jour le dimanche 29 mars 2020 <br> Source : Organisation
-                        Mondiale de la Santé</p>
-                </div>
-                <div class="tab-pane fade" id="pills-monde-top" role="tabpanel" aria-labelledby="pills-profile-tab">
-                    <table class="table table-bordered">
-                        <thead class=" text-center">
-                        <tr>
-                            <th scope="col">Infectés</th>
-                            <th scope="col">Morts</th>
-                            <th scope="col">Guéris</th>
-                        </tr>
-                        </thead>
-                        <tbody class="">
-                        <tr class="text-center text-bold">
-                            <td class="text-warning g_confirmes">-</td>
-                            <td class="text-danger g_deces">-</td>
-                            <td class="text-success g_touches">-</td>
-                        </tr>
-
-                        </tbody>
-                    </table>
-                    <p class="font-italic text-center">Mise à jour le dimanche 29 mars 2020 <br> Source : Organisation
-                        Mondiale de la Santé</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-8 col-12">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="img/img-12.jpg" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Un titre</h5>
-                            <p>Un résumé.</p>
-                        </div>
+                <div class="tab-content mt-4" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <div class="row row-cols-1 row-cols-md-3 row-cols-1" id="pubs-body"></div>
                     </div>
-                    <div class="carousel-item">
-                        <img src="img/img-12.jpg" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Un titre</h5>
-                            <p>Un résumé.</p>
-                        </div>
+                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        <div class="row row-cols-1 row-cols-md-3 row-cols-1" id="videos-body"></div>
                     </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
-            <nav class="mt-4">
-                <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
-                       aria-controls="nav-home" aria-selected="true">Articles</a>
-                    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
-                       aria-controls="nav-profile" aria-selected="false">Vidéos</a>
-                    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab"
-                       aria-controls="nav-contact" aria-selected="false">Comment faire?</a>
-                </div>
-            </nav>
-            <div class="tab-content mt-4" id="nav-tabContent">
-                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                    <div class="row row-cols-1 row-cols-md-3 row-cols-1" id="pubs-body"></div>
-                </div>
-                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                    <div class="row row-cols-1 row-cols-md-3 row-cols-1" id="videos-body"></div>
-                </div>
-                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                    <div class="row row-cols-1 row-cols-md-3">
-                        <div class="col mb-4">
-                            <div class="card">
-                                <figure class="snip1518 text-left">
-                                    <div class="image"><img src="image/image1.jpg" alt="sample101"/></div>
-                                    <figcaption class="p-3">
-                                        <h3>1. Lavez-vous les mains avec de l'eau et au savon</h3>
-                                        <p>La meilleure façon de prévenir le coronavirus consiste à se laver les mains aussi souvent que possible. Mouillez vos mains avec de l'eau chaude, puis appliquez un savon doux. Faites mousser le savon pendant 20 à 30 secondes, puis rincez-vous les mains à l'eau chaude du robinet.
-                                        </p>
-                                    </figcaption>
-                                    <a href="article1.html#tip1"></a>
-                                </figure>
+                    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                        <div class="row row-cols-1 row-cols-md-3">
+                            <div class="col mb-4">
+                                <div class="card">
+                                    <figure class="snip1518 text-left">
+                                        <div class="image"><img src="image/image1.jpg" alt="sample101" /></div>
+                                        <figcaption class="p-3">
+                                            <h3>1. Lavez-vous les mains avec de l'eau et au savon</h3>
+                                            <p>La meilleure façon de prévenir le coronavirus consiste à se laver les
+                                                mains aussi souvent que possible. Mouillez vos mains avec de l'eau
+                                                chaude, puis appliquez un savon doux. Faites mousser le savon pendant 20
+                                                à 30 secondes, puis rincez-vous les mains à l'eau chaude du robinet.
+                                            </p>
+                                        </figcaption>
+                                        <a href="article1.html#tip1"></a>
+                                    </figure>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col mb-4">
-                            <div class="card">
-                                <figure class="snip1518 text-left">
-                                    <div class="image"><img src="image/image2.jpg" alt="sample101"/></div>
-                                    <figcaption class="p-3">
-                                        <h3>2. Ne touchez pas à vos yeux, votre nez et votre bouche</h3>
-                                        <p>Vous pouvez entrer en contact avec le coronavirus en touchant une surface, comme une poignée de porte ou un comptoir. Dans ce cas, les germes peuvent s'attarder sur vos mains, de sorte que vous pouvez facilement être infecté(e) si vous vous touchez le visage avec des mains sales.
-                                        </p>
-                                    </figcaption>
-                                    <a href="article1.html#tip2"></a>
-                                </figure>
+                            <div class="col mb-4">
+                                <div class="card">
+                                    <figure class="snip1518 text-left">
+                                        <div class="image"><img src="image/image2.jpg" alt="sample101" /></div>
+                                        <figcaption class="p-3">
+                                            <h3>2. Ne touchez pas à vos yeux, votre nez et votre bouche</h3>
+                                            <p>Vous pouvez entrer en contact avec le coronavirus en touchant une
+                                                surface, comme une poignée de porte ou un comptoir. Dans ce cas, les
+                                                germes peuvent s'attarder sur vos mains, de sorte que vous pouvez
+                                                facilement être infecté(e) si vous vous touchez le visage avec des mains
+                                                sales.
+                                            </p>
+                                        </figcaption>
+                                        <a href="article1.html#tip2"></a>
+                                    </figure>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col mb-4">
-                            <div class="card">
-                                <figure class="snip1518 text-left">
-                                    <div class="image"><img src="image/image3.jpg" alt="sample101"/></div>
-                                    <figcaption class="p-3">
-                                        <h3>3. Restez à l'écart des personnes qui toussent ou éternuent.</h3>
-                                        <p>Le coronavirus étant une infection respiratoire, la toux et les éternuements sont des symptômes courants. De plus, la toux et les éternuements diffusent tous 2 le virus dans l'air, ce qui peut augmenter les risques d'infection.
-                                        </p>
-                                    </figcaption>
-                                    <a href="article1.html#tip3"></a>
-                                </figure>
+                            <div class="col mb-4">
+                                <div class="card">
+                                    <figure class="snip1518 text-left">
+                                        <div class="image"><img src="image/image3.jpg" alt="sample101" /></div>
+                                        <figcaption class="p-3">
+                                            <h3>3. Restez à l'écart des personnes qui toussent ou éternuent.</h3>
+                                            <p>Le coronavirus étant une infection respiratoire, la toux et les
+                                                éternuements sont des symptômes courants. De plus, la toux et les
+                                                éternuements diffusent tous 2 le virus dans l'air, ce qui peut augmenter
+                                                les risques d'infection.
+                                            </p>
+                                        </figcaption>
+                                        <a href="article1.html#tip3"></a>
+                                    </figure>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col mb-4">
-                            <div class="card">
-                                <figure class="snip1518 text-left">
-                                    <div class="image"><img src="image/image4.jpg" alt="sample101"/></div>
-                                    <figcaption class="p-3">
-                                        <h3>4. Ne serrez pas la main des autres.</h3>
-                                        <p>Les personnes porteuses du virus peuvent malheureusement contaminer les autres, même s'ils ne montrent aucun symptôme.
-                                        </p>
-                                    </figcaption>
-                                    <a href="article1.html#tip4"></a>
-                                </figure>
+                            <div class="col mb-4">
+                                <div class="card">
+                                    <figure class="snip1518 text-left">
+                                        <div class="image"><img src="image/image4.jpg" alt="sample101" /></div>
+                                        <figcaption class="p-3">
+                                            <h3>4. Ne serrez pas la main des autres.</h3>
+                                            <p>Les personnes porteuses du virus peuvent malheureusement contaminer les
+                                                autres, même s'ils ne montrent aucun symptôme.
+                                            </p>
+                                        </figcaption>
+                                        <a href="article1.html#tip4"></a>
+                                    </figure>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col mb-4">
-                            <div class="card">
-                                <figure class="snip1518 text-left">
-                                    <div class="image"><img src="image/image5.jpg" alt="sample101"/></div>
-                                    <figcaption class="p-3">
-                                        <h3>5. Désinfectez quotidiennement les surfaces que vous touchez.</h3>
-                                        <p>Malheureusement, les coronavirus peuvent s'attarder sur des surfaces telles que les poignées de porte, les comptoirs et les robinets. Utilisez un désinfectant en spray ou des lingettes antidécoloration pour nettoyer quotidiennement ces surfaces.
-                                        </p>
-                                    </figcaption>
-                                    <a href="article1.html#tip5"></a>
-                                </figure>
+                            <div class="col mb-4">
+                                <div class="card">
+                                    <figure class="snip1518 text-left">
+                                        <div class="image"><img src="image/image5.jpg" alt="sample101" /></div>
+                                        <figcaption class="p-3">
+                                            <h3>5. Désinfectez quotidiennement les surfaces que vous touchez.</h3>
+                                            <p>Malheureusement, les coronavirus peuvent s'attarder sur des surfaces
+                                                telles que les poignées de porte, les comptoirs et les robinets.
+                                                Utilisez un désinfectant en spray ou des lingettes antidécoloration pour
+                                                nettoyer quotidiennement ces surfaces.
+                                            </p>
+                                        </figcaption>
+                                        <a href="article1.html#tip5"></a>
+                                    </figure>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col mb-4">
-                            <div class="card">
-                                <figure class="snip1518 text-left">
-                                    <div class="image"><img src="image/image6.jpg" alt="sample101"/></div>
-                                    <figcaption class="p-3">
-                                        <h3>6. Ne vous inquiétez pas trop si vous n'êtes pas vraiment en danger.</h3>
-                                        <p>Les mythes sur les coronavirus se sont répandus sur les médias sociaux, provoquant parfois des craintes inutiles. Il peut être utile de vérifier vos sources d'informations avant de prendre une quelconque décision.
-                                        </p>
-                                    </figcaption>
-                                    <a href="article1.html#tip6"></a>
-                                </figure>
+                            <div class="col mb-4">
+                                <div class="card">
+                                    <figure class="snip1518 text-left">
+                                        <div class="image"><img src="image/image6.jpg" alt="sample101" /></div>
+                                        <figcaption class="p-3">
+                                            <h3>6. Ne vous inquiétez pas trop si vous n'êtes pas vraiment en danger.
+                                            </h3>
+                                            <p>Les mythes sur les coronavirus se sont répandus sur les médias sociaux,
+                                                provoquant parfois des craintes inutiles. Il peut être utile de vérifier
+                                                vos sources d'informations avant de prendre une quelconque décision.
+                                            </p>
+                                        </figcaption>
+                                        <a href="article1.html#tip6"></a>
+                                    </figure>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-3 offset-lg-1 col-12">
-            <h4 class="text-center mt-5 d-none d-lg-block">Statistiques</h4>
-            <ul class="nav nav-pills mb-3 d-none d-lg-block" id="pills-tab" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-gabon" role="tab"
-                       aria-controls="pills-home" aria-selected="true">Au Gabon</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-monde" role="tab"
-                       aria-controls="pills-profile" aria-selected="false">Dans le Monde</a>
-                </li>
-            </ul>
-            <div class="tab-content d-none d-lg-block" id="pills-tabContent">
-                <div class="tab-pane fade show active" id="pills-gabon" role="tabpanel"
-                     aria-labelledby="pills-home-tab">
-                    <table class="table table-bordered">
-                        <thead class=" text-center">
-                        <tr>
-                            <th scope="col">Infectés</th>
-                            <th scope="col">Morts</th>
-                            <th scope="col">Guéris</th>
-                        </tr>
-                        </thead>
-                        <tbody class="">
-                        <tr class="text-center text-bold">
-                            <td class="text-warning contaminations">-</td>
-                            <td class="text-danger deces">-</td>
-                            <td class="text-success gueris">-</td>
-                        </tr>
+            <div class="col-lg-3 offset-lg-1 col-12">
+                <h4 class="text-center mt-5 d-none d-lg-block">Statistiques</h4>
+                <ul class="nav nav-pills mb-3 d-none d-lg-block" id="pills-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-gabon" role="tab"
+                            aria-controls="pills-home" aria-selected="true">Au Gabon</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-monde" role="tab"
+                            aria-controls="pills-profile" aria-selected="false">Dans le Monde</a>
+                    </li>
+                </ul>
+                <div class="tab-content d-none d-lg-block" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-gabon" role="tabpanel"
+                        aria-labelledby="pills-home-tab">
+                        <table class="table table-bordered">
+                            <thead class=" text-center">
+                                <tr>
+                                    <th scope="col">Infectés</th>
+                                    <th scope="col">Morts</th>
+                                    <th scope="col">Guéris</th>
+                                </tr>
+                            </thead>
+                            <tbody class="">
+                                <tr class="text-center text-bold">
+                                    <td class="text-warning contaminations">-</td>
+                                    <td class="text-danger deces">-</td>
+                                    <td class="text-success gueris">-</td>
+                                </tr>
 
-                        </tbody>
-                    </table>
-                    <p class="font-italic text-center">Mise à jour le dimanche 29 mars 2020 <br> Source : Organisation
-                        Mondiale de la Santé</p>
+                            </tbody>
+                        </table>
+                        <p class="font-italic text-center">Mise à jour le dimanche 29 mars 2020 <br> Source :
+                            Organisation
+                            Mondiale de la Santé</p>
+                    </div>
+                    <div class="tab-pane fade" id="pills-monde" role="tabpanel" aria-labelledby="pills-profile-tab">
+                        <table class="table table-bordered">
+                            <thead class=" text-center">
+                                <tr>
+                                    <th scope="col">Infectés</th>
+                                    <th scope="col">Morts</th>
+                                    <th scope="col">Pays touchés</th>
+                                </tr>
+                            </thead>
+                            <tbody class="">
+                                <tr class="text-center text-bold">
+                                    <td class="text-warning g_confirmes">-</td>
+                                    <td class="text-danger g_deces">-</td>
+                                    <td class="text-success g_touches">-</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                        <p class="font-italic text-center">Mise à jour le dimanche 29 mars 2020 <br> Source :
+                            Organisation
+                            Mondiale de la Santé</p>
+                    </div>
                 </div>
-                <div class="tab-pane fade" id="pills-monde" role="tabpanel" aria-labelledby="pills-profile-tab">
-                    <table class="table table-bordered">
-                        <thead class=" text-center">
-                        <tr>
-                            <th scope="col">Infectés</th>
-                            <th scope="col">Morts</th>
-                            <th scope="col">Guéris</th>
-                        </tr>
-                        </thead>
-                        <tbody class="">
-                        <tr class="text-center text-bold">
-                            <td class="text-warning g_confirmes">-</td>
-                            <td class="text-danger g_deces">-</td>
-                            <td class="text-success g_touches">-</td>
-                        </tr>
+                <h4 class="text-center mt-5">Fake News</h4>
+                <div id="fake-body">
 
-                        </tbody>
-                    </table>
-                    <p class="font-italic text-center">Mise à jour le dimanche 29 mars 2020 <br> Source : Organisation
-                        Mondiale de la Santé</p>
                 </div>
-            </div>
-            <h4 class="text-center mt-5">Fake News</h4>
-            <div id="fake-body">
-
             </div>
         </div>
     </div>
-</div>
 
-<footer class="text-muted mt-5 pt-3 border-top">
-    <div class="container">
-        <p class="float-right">
-            <a href="http://ecole241.org">Powered by Ecole 241</a>
-        </p>
-        <p>Données provenant de l'OMS 2020</p>
-    </div>
-</footer>
-<!-- carte js -->
+    <footer class="text-muted mt-5 pt-3 border-top">
+        <div class="container">
+            <p class="float-right">
+                <a href="http://ecole241.org">Powered by Ecole 241</a>
+            </p>
+            <p>Données provenant de l'OMS 2020</p>
+        </div>
+    </footer>
+    <!-- carte js -->
 
-<!-- videos js -->
-<script src="https://vjs.zencdn.net/7.7.5/video.js"></script>
-<!-- script bootstrap -->
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    <!-- videos js -->
+    <script src="https://vjs.zencdn.net/7.7.5/video.js"></script>
+    <!-- script bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
 </body>
@@ -361,4 +394,5 @@
 <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
 <script src="assets/js/core/config.js"></script>
 <script src="assets/js/main.js"></script>
+
 </html>
